@@ -1,7 +1,7 @@
 #include <iostream>
 #include "include/irrKlang.h"
 using namespace irrklang;
-
+#pragma comment(lib, "irrKlang.lib")
 int main(int argc, const char** argv)
 {
   // start the sound engine with default parameters
