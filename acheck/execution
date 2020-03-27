@@ -1,0 +1,7 @@
+g++ audiochk.cpp  -I"../../irrKlang-64bit-1.6.0/include" -L"/usr/lib" ../../irrKlang-64bit-1.6.0/bin/linux-gcc-64/libIrrKlang.so -pthread
+
+
+within the first two quotation marks, write the path to the include directory 
+in the last two marks write the path to libIrrKlang.so
+
+you should be able to find the both of them inside your irrklang directory. then do pwd and copy path

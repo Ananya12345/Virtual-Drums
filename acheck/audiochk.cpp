@@ -1,5 +1,5 @@
 #include <iostream>
-#include "include/irrKlang.h"
+#include <irrKlang.h>
 using namespace irrklang;
 #pragma comment(lib, "irrKlang.lib")
 int main(int argc, const char** argv)
@@ -11,7 +11,7 @@ int main(int argc, const char** argv)
     return 0; // error starting up the engine
  
   // play some sound stream, looped
-  engine->play2D("audio.mp3", true);
+  engine->play2D("/media/sf_ubun2/irrKlang-64bit-1.6.0/examples/01.HelloWorld/inside.wav", true);
 
   char i = 0;
   std::cin >> i; // wait for user to press some key
