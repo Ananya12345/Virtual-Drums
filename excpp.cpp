@@ -11,11 +11,11 @@ void mouse(int button, int state, int x, int y)
 	    {
 		if (x>0 && x<800 && y<500 && y>100)
 		    {
-		    cout<<"inside"
+		    cout<<"inside";
 		    }
 		else
 		    {
-		    cout<<"outside"
+		    cout<<"outside";
 		    }
 		glutPostRedisplay();
 	    }
