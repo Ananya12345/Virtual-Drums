@@ -3,20 +3,24 @@
 #include <iostream>
 #include<SOIL.h>
 #include <irrKlang.h>
+
 using namespace irrklang;
 
 
 void mouse(int button, int state, int x, int y)
-    {    ISoundEngine* engine = createIrrKlangDevice();
+    {   char var; 
+
+	ISoundEngine* engine = createIrrKlangDevice();
 
   	if (!engine)
     		return;
-
+   do{
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
 		if (x>0 && x<800 && y<500 && y>100)
 		    {
-		    engine->play2D("inside.wav", true);
+		    engine->play2D("lion2.wav", false);	
+			std::cin>>var;		
 
 		    }
 		else
@@ -25,13 +29,13 @@ void mouse(int button, int state, int x, int y)
 		    }
 		glutPostRedisplay();
 
-		char i = 0;
-		std::cin >> i; // wait for user to press some key
-
-  		engine->drop(); // delete engine
-  		
+		
 	    }
-    }
+    }while (var!='q');
+    engine->drop(); // delete engine
+		return;
+  }
+
 
 
 int main(int argc, char** argv)
@@ -78,7 +82,6 @@ int main(int argc, char** argv)
     glFlush(); //if you remove this there is a 
 
     glutMouseFunc(mouse);
-
     glutMainLoop();
 
     return 0;
