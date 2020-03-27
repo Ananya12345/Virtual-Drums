@@ -2,7 +2,7 @@
 #include <irrKlang.h>
 using namespace irrklang;
 
-int main(int argc, const char** argv)
+int main()
 {
   // start the sound engine with default parameters
   ISoundEngine* engine = createIrrKlangDevice();
