@@ -1,8 +1,13 @@
 #include <iostream>
 #include <irrKlang.h>
 using namespace irrklang;
+<<<<<<< HEAD
 #pragma comment(lib, "irrKlang.lib")
 int main(int argc, const char** argv)
+=======
+
+int main()
+>>>>>>> 35ec0b685cb90ce9527f8e296c230ec12ce682d9
 {
   // start the sound engine with default parameters
   ISoundEngine* engine = createIrrKlangDevice();
