@@ -20,10 +20,44 @@ void mouse(int button, int state, int x, int y)
 	    {
 		if (x>0 && x<125 && y<150 && y>0)
 		    {
-		    engine->play2D("lion2.wav", false);	
+		    engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);	
 			std::cin>>var;		
-
 		    }
+		else if (x>125 && x<250 && y<150 && y>0)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>250 && x<375 && y<150 && y>0)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>375 && x<500 && y<150 && y>0)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>0 && x<125 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>125 && x<250 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>250 && x<375 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>375 && x<500 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			std::cin>>var;	
+			}
 		else
 		    {
 		    std::cout<<"outside";
@@ -32,6 +66,24 @@ void mouse(int button, int state, int x, int y)
 
 		
 	    }
+	if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
+	{
+		if (x>125 && x<250 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>0 && x<125 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cg lab/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			std::cin>>var;	
+			}
+		else
+		    {
+		    std::cout<<"outside";
+		    }
+		glutPostRedisplay();
+	}
     }while (var!='q');
     engine->drop(); // delete engine
 		return;
