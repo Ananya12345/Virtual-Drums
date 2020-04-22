@@ -17,7 +17,7 @@ void mouse(int button, int state, int x, int y)
    do{
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
-		if (x>0 && x<800 && y<500 && y>100)
+		if (x>0 && x<100 && y<100 && y>0)
 		    {
 		    engine->play2D("lion2.wav", false);	
 			std::cin>>var;		
@@ -43,10 +43,10 @@ int main(int argc, char** argv)
     //create GL context
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_RGBA);
-    glutInitWindowSize(800, 600);
+    glutInitWindowSize(200, 200);
     glutCreateWindow("windowname");
     glMatrixMode(GL_PROJECTION);
-    glOrtho(0, 800, 0, 600, -1, 1);
+    glOrtho(0, 200, 0, 200, -1, 1);
     glMatrixMode(GL_MODELVIEW);
 
     //clear and draw quad with texture (could be in display callback)
@@ -71,10 +71,10 @@ int main(int argc, char** argv)
     
     glEnable(GL_TEXTURE_2D);
     glBegin(GL_QUADS);
-    glTexCoord2i(0, 0); glVertex2i(100, 100);
-    glTexCoord2i(0, 1); glVertex2i(100, 500);
-    glTexCoord2i(1, 1); glVertex2i(500, 500);
-    glTexCoord2i(1, 0); glVertex2i(500, 100);
+    glTexCoord2i(0, 0); glVertex2i(0, 0);
+    glTexCoord2i(0, 1); glVertex2i(100, 0);
+    glTexCoord2i(1, 1); glVertex2i(100, 100);
+    glTexCoord2i(1, 0); glVertex2i(0, 100);
     glEnd();
     glDisable(GL_TEXTURE_2D);
     
