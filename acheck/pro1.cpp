@@ -205,6 +205,78 @@ void mouse1(int button, int state, int x, int y)
 		//return;
   }
 
+void keys(unsigned char key,int x,int y)
+ {
+   char var; 
+   std::cout<<x<<"\n";
+   std::cout<<y;
+
+   ISoundEngine* engine = createIrrKlangDevice();
+
+  if (!engine)
+  return;
+  
+	if (key== 'q')
+		{
+		 engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
+		}
+	
+	else if (key== 't')		{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);
+		}	
+	else if (key== 'r')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);
+		}	
+	else if (key== 'p')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			//std::cin>>var;	
+			}
+		else if (key== 'o')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			//std::cin>>var;	
+			}
+		else if (key== 's')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			//std::cin>>var;	
+			}
+		else if (key== 'h')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			//std::cin>>var;	
+			}
+		else if (key== 'm')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			//std::cin>>var;	
+			}
+	else if (key== 'd')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			//std::cin>>var;	
+			}
+		else if (key== 'c')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			//std::cin>>var;	
+			}
+		else
+		    {
+		    std::cout<<"outside";
+		    }
+		//glutPostRedisplay();
+	display();
+   // }while (var!='q');
+
+  //  engine->drop();
+ // delete engine
+		//return;
+  
+ } 
+
 int main(int argc, char ** argv) {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
@@ -214,6 +286,7 @@ int main(int argc, char ** argv) {
     init();
     glutDisplayFunc(display);
     glutMouseFunc(mouse1);
+    glutKeyboardFunc(keys);
     glutMainLoop();
 }
 
