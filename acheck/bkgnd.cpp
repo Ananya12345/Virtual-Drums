@@ -11,7 +11,6 @@ void init() {
  }
 
 void drawl1() {
-	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0,0.0,1.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(0,0);
@@ -21,6 +20,7 @@ void drawl1() {
 	glEnd();
 	glFlush();
 }
+	
 
 void drawl2() {
 	glColor3f(0.0,1.0,0.0);

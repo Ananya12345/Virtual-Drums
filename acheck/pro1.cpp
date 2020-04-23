@@ -10,104 +10,102 @@ using namespace irrklang;
 void init() {
     glClearColor(0.0,0.0,0.0,0.0);
     glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(0.0,500.0,0.0,300.0);
+    gluOrtho2D(0.0,3000.0,0.0,700.0);//l,r,t,b
  }
 
 void drawl1() {
-	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0,0.0,1.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(0,0);
-	glVertex2d(125,0);
-	glVertex2d(125,150);
-	glVertex2d(0,150);
+	glVertex2d(750,0);
+	glVertex2d(750,350);
+	glVertex2d(0,350);
 	glEnd();
-	glFlush();std::cout<<"drawl1\n";
+	glFlush();
 }
+	
 
 void drawl2() {
 	glColor3f(0.0,1.0,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(125,0);
-	glVertex2d(250,0);
-	glVertex2d(250,150);
-	glVertex2d(125,150);
+	glVertex2d(750,0);
+	glVertex2d(1500,0);
+	glVertex2d(1500,350);
+	glVertex2d(750,350);
 	glEnd();
-	glFlush();std::cout<<"drawl2\n";
+	glFlush();
 }
 
 void drawl3() {
 	glColor3f(0.0,1.0,1.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(250,0);
-	glVertex2d(375,0);
-	glVertex2d(375,150);
-	glVertex2d(250,150);
+	glVertex2d(1500,0);
+	glVertex2d(2250,0);
+	glVertex2d(2250,350);
+	glVertex2d(1500,350);
 	glEnd();
-	glFlush();std::cout<<"drawl3\n";
+	glFlush();
 }
 
 void drawl4() {
 	//glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(375,0);
-	glVertex2d(500,0);
-	glVertex2d(500,150);
-	glVertex2d(375,150);
+	glVertex2d(2250,0);
+	glVertex2d(3000,0);
+	glVertex2d(3000,350);
+	glVertex2d(2250,350);
 	glEnd();
-	glFlush();std::cout<<"drawl4\n";
+	glFlush();
 }
 
 void drawu1() {
 	//glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,0.0,1.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(0,150);
-	glVertex2d(125,150);
-	glVertex2d(125,300);
-	glVertex2d(0,300);
+	glVertex2d(0,350);
+	glVertex2d(750,350);
+	glVertex2d(750,700);
+	glVertex2d(0,700);
 	glEnd();
-	glFlush();std::cout<<"drawu1\n";
+	glFlush();
 }
 
 void drawu2() {
 	//glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(1.0,1.0,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(125,150);
-	glVertex2d(250,150);
-	glVertex2d(250,300);
-	glVertex2d(125,300);
+	glVertex2d(750,350);
+	glVertex2d(1500,350);
+	glVertex2d(1500,700);
+	glVertex2d(750,700);
 	glEnd();
 	glFlush();
-	std::cout<<"drawu2\n";
 }
 
 void drawu3() {
 	//glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0,0.0,0.5);
 	glBegin(GL_POLYGON);
-	glVertex2d(250,150);
-	glVertex2d(375,150);
-	glVertex2d(375,300);
-	glVertex2d(250,300);
+	glVertex2d(1500,350);
+	glVertex2d(2250,350);
+	glVertex2d(2250,700);
+	glVertex2d(1500,700);
 	glEnd();
-	glFlush();std::cout<<"drawu3\n";
+	glFlush();
 }
 
 void drawu4() {
 //	glClear(GL_COLOR_BUFFER_BIT);
 	glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(375,150);
-	glVertex2d(500,150);
-	glVertex2d(500,300);
-	glVertex2d(375,300);
+	glVertex2d(2250,350);
+	glVertex2d(3000,350);
+	glVertex2d(3000,700);
+	glVertex2d(2250,700);
 	glEnd();
-	glFlush();std::cout<<"drawu4\n";
+	glFlush();
 }
-
 
 void display() {
 	drawl1();
@@ -121,6 +119,7 @@ void display() {
 	glFlush();
 }
 
+
 void mouse1(int button, int state, int x, int y)
     {   char var; 
 	std::cout<<x<<"\n";
@@ -133,42 +132,42 @@ void mouse1(int button, int state, int x, int y)
   // do{
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
-		if (x>0 && x<125 && y<150 && y>0)
+		if (x>0 && x<750 && y<350 && y>0)
 		    {
-		    engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);	
+		    engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false); 	
 			//std::cin>>var;		
 		    }
-		else if (x>125 && x<250 && y<150 && y>0)
+		else if (x>750 && x<1500 && y<350 && y>0)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
 			//std::cin>>var;	
 			}
-		else if (x>250 && x<375 && y<150 && y>0)
+		else if (x>1500 && x<2250 && y<350 && y>0)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
 			//std::cin>>var;	
 			}
-		 else if (x>375 && x<500 && y<150 && y>0)
+		 else if (x>2250 && x<3000 && y<350 && y>0)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
 			//std::cin>>var;	
 			}
-		else if (x>0 && x<125 && y<300 && y>150)
+		else if (x>0 && x<750 && y<700 && y>350)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
 			//std::cin>>var;	
 			}
-		 else if (x>125 && x<250 && y<300 && y>150)
+		 else if (x>750 && x<1500 && y<700 && y>350)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
 			//std::cin>>var;	
 			}
-		 else if (x>250 && x<375 && y<300 && y>150)
+		 else if (x>1500 && x<2250 && y<700 && y>350)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
 			//std::cin>>var;	
 			}
-		 else if (x>375 && x<500 && y<300 && y>150)
+		 else if (x>2250 && x<3000 && y<700 && y>350)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
 			//std::cin>>var;	
@@ -183,12 +182,12 @@ void mouse1(int button, int state, int x, int y)
 	    }
 	if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
 	{
-		if (x>125 && x<250 && y<300 && y>150)
+		if (x>750 && x<1500 && y<700 && y>350)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
 			//std::cin>>var;	
 			}
-		 else if (x>0 && x<125 && y<300 && y>150)
+		 else if (x>0 && x<750 && y<700 && y>350)
 			{
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
 			//std::cin>>var;	
@@ -210,7 +209,7 @@ int main(int argc, char ** argv) {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(10,10);
-    glutInitWindowSize(500,300);
+    glutInitWindowSize(3000,700);
     glutCreateWindow("VIRTUAL-DRUM");
     init();
     glutDisplayFunc(display);
