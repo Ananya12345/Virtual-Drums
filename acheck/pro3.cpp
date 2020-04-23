@@ -6,7 +6,7 @@
 
 using namespace std;
 using namespace irrklang;
-static GLint num=1;
+/*static GLint num=0;
 
 void music()
 {
@@ -72,7 +72,7 @@ void music()
 		    }
 		glutPostRedisplay();
 	
-    }while (var!='q');
+    }
     engine->drop(); // delete engine
 		return;
   }
@@ -82,21 +82,21 @@ void music()
 void mouse1(int button, int state, int x, int y)
     {  	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
-		if (x>0 && x<125 && y<150 && y>0)num=1;
+		if (x>0 && x<125 && y<150 && y>0){num=1;glutIdleFunc(music);}
 		    
-		else if (x>125 && x<250 && y<150 && y>0)num=2;
+		 if (x>125 && x<250 && y<150 && y>0){num=2;glutIdleFunc(music);}
 			
-		else if (x>250 && x<375 && y<150 && y>0)num=3;
+		 if (x>250 && x<375 && y<150 && y>0){num=3;glutIdleFunc(music);}
 			
-		 else if (x>375 && x<500 && y<150 && y>0)num=4;
+		  if (x>375 && x<500 && y<150 && y>0){num=4;glutIdleFunc(music);}
 			
-		else if (x>0 && x<125 && y<300 && y>150)num=5;
+	        if (x>0 && x<125 && y<300 && y>150){num=5;glutIdleFunc(music);}
 			
-		 else if (x>125 && x<250 && y<300 && y>150)num=6;
+		  if (x>125 && x<250 && y<300 && y>150)num=6;
 			
-		 else if (x>250 && x<375 && y<300 && y>150)num=7;
+		  if (x>250 && x<375 && y<300 && y>150)num=7;
 			
-		 else if (x>375 && x<500 && y<300 && y>150)num=8;
+		  if (x>375 && x<500 && y<300 && y>150)num=8;
 			
 		else
 		  glutPostRedisplay();
@@ -105,12 +105,97 @@ void mouse1(int button, int state, int x, int y)
 	{
 		if (x>125 && x<250 && y<300 && y>150)num=9;
 			
-		 else if (x>0 && x<125 && y<300 && y>150)num=10;
+		 if (x>0 && x<125 && y<300 && y>150)num=10;
 			
 		else
 		 glutPostRedisplay();
 	}
    
+  }
+
+*/
+void keys(unsigned char key, int x, int y)
+    {   char var; 
+	//int y=0;
+
+	ISoundEngine* engine = createIrrKlangDevice();
+
+  	if (!engine)
+    		return;
+   do{
+	if (key== 'l')
+		    {
+		    engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);	
+			std::cin>>var;		
+		    }
+	}while (var!='q');
+    engine->drop();
+	
+		do{ if (key=='t')
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
+			std::cin>>var;	
+			}
+	}while (var!='q');
+    engine->drop();
+		/*else if (x>250 && x<375 && y<150 && y>0)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
+			std::cin>>var;	
+			}
+		 else if (x>375 && x<500 && y<150 && y>0)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			std::cin>>var;	
+			}
+		else if (x>0 && x<125 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			std::cin>>var;	
+			}
+		 else if (x>125 && x<250 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			std::cin>>var;	
+			}
+		 else if (x>250 && x<375 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			std::cin>>var;	
+			}
+		 else if (x>375 && x<500 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			std::cin>>var;	
+			}
+		else
+		    {
+		    std::cout<<"outside";
+		    }
+		glutPostRedisplay();*/
+
+		
+	    
+	/*if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
+	{
+		if (x>125 && x<250 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			std::cin>>var;	
+			}
+		 else if (x>0 && x<125 && y<300 && y>150)
+			{
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			std::cin>>var;	
+			}
+		else
+		    {
+		    std::cout<<"outside";
+		    }
+		glutPostRedisplay();
+	}*/
+    // delete engine
+		return;
   }
 
 void init() {
@@ -234,8 +319,8 @@ int main(int argc, char ** argv) {
     glutCreateWindow("VIRTUAL-DRUM");
     init();
     glutDisplayFunc(display);
-    glutIdleFunc(music);
-    glutMouseFunc(mouse1);
+    glutKeyboardFunc(keys);
+    //glutMouseFunc(mouse1);
     glutMainLoop();
 }
 
