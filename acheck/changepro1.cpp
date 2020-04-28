@@ -15,7 +15,7 @@ void init() {
 
 void drawl1(int x) {
 	if (x==1)
-		glColor3f(0.0,0.0,1.0);
+		glColor3f(0.5f,0.5f,0.5f);
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
@@ -30,7 +30,7 @@ void drawl1(int x) {
 
 void drawl2(int x) {
 	if (x==1)
-		glColor3f(0.0,1.0,0.0);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(0.0,0.5,0.0);;
 	glBegin(GL_POLYGON);
@@ -44,7 +44,7 @@ void drawl2(int x) {
 
 void drawl3(int x) {
 	if (x==1)
-		glColor3f(0.0,1.0,1.0);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
@@ -58,7 +58,7 @@ void drawl3(int x) {
 
 void drawl4(int x) {
 	if (x==1)
-		glColor3f(1.0,0.0,0.0);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
@@ -72,7 +72,7 @@ void drawl4(int x) {
 
 void drawu1(int x) {
 	if (x==1)
-		glColor3f(1.0,0.0,1.0);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
@@ -86,7 +86,7 @@ void drawu1(int x) {
 
 void drawu2(int x) {
 	if (x==1)
-		glColor3f(1.0,1.0,0.0);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
@@ -100,7 +100,7 @@ void drawu2(int x) {
 
 void drawu3(int x) {
 	if (x==1)
-		glColor3f(0.0,0.0,0.5);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
@@ -114,7 +114,7 @@ void drawu3(int x) {
 
 void drawu4(int x) {
 	if (x==1)
-		glColor3f(0.0,0.5,1.0);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
@@ -125,6 +125,25 @@ void drawu4(int x) {
 	glEnd();
 	glFlush();
 }
+
+void line(void)
+{
+//glClear(GL_COLOR_BUFFER_BIT);
+glLineWidth(1.0f);
+glColor3f(1.0,0.0,0.0);
+glBegin(GL_LINES);
+glVertex2d(0,350);
+glVertex2d(3000,350);
+glVertex2d(750,0);
+glVertex2d(750,700);
+glVertex2d(1500,0);
+glVertex2d(1500,700);
+glVertex2d(2250,0);
+glVertex2d(2250,700);
+glEnd();
+glFlush();
+}
+
 
 void display() {
 	drawl1(1);
@@ -161,42 +180,42 @@ void mouse1(int button, int state, int x, int y)
 		if (x>0 && x<750 && y<350 && y>0)
 		    {
 			drawl1(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
 			delay();
 		    }
 		else if (x>750 && x<1500 && y<350 && y>0)
 			{ drawl2(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
 			delay();
 			}
 		else if (x>1500 && x<2250 && y<350 && y>0)
 			{drawl3(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
 			delay();	
 			}
 		 else if (x>2250 && x<3000 && y<350 && y>0)
 			{drawl4(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
 			delay();	
 			}
 		else if (x>0 && x<750 && y<700 && y>350)
 			{ drawu1(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
 			delay();	
 			}
 		 else if (x>750 && x<1500 && y<700 && y>350)
 			{drawu2(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
 			delay();	
 			}
 		 else if (x>1500 && x<2250 && y<700 && y>350)
 			{drawu3(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
 			delay();	
 			}
 		 else if (x>2250 && x<3000 && y<700 && y>350)
 			{drawu4(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
 			delay();	
 			}
 		else
@@ -211,12 +230,12 @@ void mouse1(int button, int state, int x, int y)
 	{
 		if (x>750 && x<1500 && y<700 && y>350)
 			{drawu2(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
 			delay();	
 			}
 		 else if (x>0 && x<750 && y<700 && y>350)
 			{drawu1(0);
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
 			delay();	
 			}
 		else
@@ -241,49 +260,49 @@ void keys(unsigned char key,int x,int y)
   
 	if (key== 'q')
 		{
-		 engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
+		 engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
 		}
 	
 	else if (key== 't')		{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);
 		}	
 	else if (key== 'r')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/righttom.wav", false);
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);
 		}	
 	else if (key== 'p')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'o')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 's')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'h')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'm')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
 			//std::cin>>var;	
 			}
 	else if (key== 'd')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'c')
 			{
-			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
 			//std::cin>>var;	
 			}
 		else
