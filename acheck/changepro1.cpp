@@ -13,18 +13,38 @@ void init() {
     gluOrtho2D(0.0,3000.0,0.0,700.0);//l,r,t,b
  }
 
+void line(void)
+{
+//glClear(GL_COLOR_BUFFER_BIT);
+glLineWidth(1.0f);
+glColor3f(0.0,0.0,0.0);
+glBegin(GL_LINES);
+//glVertex2d(0,350);
+//glVertex2d(3000,350);//horizontal
+glVertex2d(600,0);
+glVertex2d(600,700);//1st line from left
+glVertex2d(1200,0);
+glVertex2d(1200,700);//2nd
+glVertex2d(1800,0);
+glVertex2d(1800,700);//3rd
+glVertex2d(2400,0);
+glVertex2d(2400,700);//4th
+glEnd();
+glFlush();
+}
+
 void drawl1(int x) {
 	if (x==1)
-		glColor3f(1.0,0.0,0.0);
+		glColor3f(0.5,0.5,0.5);
 	else
 		glColor3f(1.0,0.0,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(0,0);
-	glVertex2d(750,0);
-	glVertex2d(750,350);
-	glVertex2d(0,350);
+	glVertex2d(1,1);
+	glVertex2d(599,1);
+	glVertex2d(599,349);
+	glVertex2d(1,349);
 	glEnd();
-	glFlush();
+	
 }
 	
 
@@ -34,10 +54,10 @@ void drawl2(int x) {
 	else
 		glColor3f(0.0,1.0,0.0);;
 	glBegin(GL_POLYGON);
-	glVertex2d(750,0);
-	glVertex2d(1500,0);
-	glVertex2d(1500,350);
-	glVertex2d(750,350);
+	glVertex2d(601,1);
+	glVertex2d(1199,1);
+	glVertex2d(1199,349);
+	glVertex2d(601,349);
 	glEnd();
 	glFlush();
 }
@@ -48,10 +68,10 @@ void drawl3(int x) {
 	else
 		glColor3f(0.0,0.5,1.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(1500,0);
-	glVertex2d(2250,0);
-	glVertex2d(2250,350);
-	glVertex2d(1500,350);
+	glVertex2d(1201,1);
+	glVertex2d(1799,1);
+	glVertex2d(1799,349);
+	glVertex2d(1201,349);
 	glEnd();
 	glFlush();
 }
@@ -62,10 +82,24 @@ void drawl4(int x) {
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(2250,0);
-	glVertex2d(3000,0);
-	glVertex2d(3000,350);
-	glVertex2d(2250,350);
+	glVertex2d(1801,1);
+	glVertex2d(2399,1);
+	glVertex2d(2399,349);
+	glVertex2d(1801,349);
+	glEnd();
+	glFlush();
+}
+
+void drawl5(int x) {
+	if (x==1)
+		glColor3f(0.5,0.5,0.5);
+	else
+		glColor3f(0.0,0.5,0.0);
+	glBegin(GL_POLYGON);
+	glVertex2d(2401,1);
+	glVertex2d(2999,1);
+	glVertex2d(2999,349);
+	glVertex2d(2401,349);
 	glEnd();
 	glFlush();
 }
@@ -76,10 +110,10 @@ void drawu1(int x) {
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(0,350);
-	glVertex2d(750,350);
-	glVertex2d(750,700);
-	glVertex2d(0,700);
+	glVertex2d(1,351);
+	glVertex2d(599,351);
+	glVertex2d(599,699);
+	glVertex2d(1,699);
 	glEnd();
 	glFlush();
 }
@@ -90,10 +124,10 @@ void drawu2(int x) {
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(750,350);
-	glVertex2d(1500,350);
-	glVertex2d(1500,700);
-	glVertex2d(750,700);
+	glVertex2d(601,351);
+	glVertex2d(1199,351);
+	glVertex2d(1199,699);
+	glVertex2d(601,699);
 	glEnd();
 	glFlush();
 }
@@ -104,10 +138,10 @@ void drawu3(int x) {
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(1500,350);
-	glVertex2d(2250,350);
-	glVertex2d(2250,700);
-	glVertex2d(1500,700);
+	glVertex2d(1201,351);
+	glVertex2d(1799,351);
+	glVertex2d(1799,699);
+	glVertex2d(1201,699);
 	glEnd();
 	glFlush();
 }
@@ -118,30 +152,26 @@ void drawu4(int x) {
 	else
 		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
-	glVertex2d(2250,350);
-	glVertex2d(3000,350);
-	glVertex2d(3000,700);
-	glVertex2d(2250,700);
+	glVertex2d(1801,351);
+	glVertex2d(2399,351);
+	glVertex2d(2399,699);
+	glVertex2d(1801,699);
 	glEnd();
 	glFlush();
 }
 
-void line(void)
-{
-//glClear(GL_COLOR_BUFFER_BIT);
-glLineWidth(1.0f);
-glColor3f(0.0,0.0,0.0);
-glBegin(GL_LINES);
-glVertex2d(0,350);
-glVertex2d(3000,350);
-glVertex2d(750,0);
-glVertex2d(750,700);
-glVertex2d(1500,0);
-glVertex2d(1500,700);
-glVertex2d(2250,0);
-glVertex2d(2250,700);
-glEnd();
-glFlush();
+void drawu5(int x) {
+	if (x==1)
+		glColor3f(0.5,0.5,0.5);
+	else
+		glColor3f(0.0,0.5,0.0);
+	glBegin(GL_POLYGON);
+	glVertex2d(2401,351);
+	glVertex2d(2999,351);
+	glVertex2d(2999,699);
+	glVertex2d(2401,699);
+	glEnd();
+	glFlush();
 }
 
 
@@ -150,10 +180,12 @@ void display() {
 	drawl2(1);
 	drawl3(1);
 	drawl4(1);
+	drawl5(1);
 	drawu1(1);
 	drawu2(1);
 	drawu3(1);
 	drawu4(1);
+	drawu5(1);
 	line();
 	glFlush();
 }
