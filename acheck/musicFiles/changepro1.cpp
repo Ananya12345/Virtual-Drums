@@ -35,9 +35,9 @@ glFlush();
 
 void drawl1(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(1.0,0.0,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(1,1);
 	glVertex2d(599,1);
@@ -50,9 +50,9 @@ void drawl1(int x) {
 
 void drawl2(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,1.0,0.0);;
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(601,1);
 	glVertex2d(1199,1);
@@ -64,9 +64,9 @@ void drawl2(int x) {
 
 void drawl3(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,1.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(1201,1);
 	glVertex2d(1799,1);
@@ -78,9 +78,9 @@ void drawl3(int x) {
 
 void drawl4(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(1801,1);
 	glVertex2d(2399,1);
@@ -92,9 +92,9 @@ void drawl4(int x) {
 
 void drawl5(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(2401,1);
 	glVertex2d(2999,1);
@@ -106,9 +106,9 @@ void drawl5(int x) {
 
 void drawu1(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(1,351);
 	glVertex2d(599,351);
@@ -120,9 +120,9 @@ void drawu1(int x) {
 
 void drawu2(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(601,351);
 	glVertex2d(1199,351);
@@ -134,9 +134,9 @@ void drawu2(int x) {
 
 void drawu3(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(1201,351);
 	glVertex2d(1799,351);
@@ -148,9 +148,9 @@ void drawu3(int x) {
 
 void drawu4(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(1801,351);
 	glVertex2d(2399,351);
@@ -162,9 +162,9 @@ void drawu4(int x) {
 
 void drawu5(int x) {
 	if (x==1)
-		glColor3f(0.5,0.5,0.5);
+		glColor3f(0.1,0.1,0.1);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(2401,351);
 	glVertex2d(2999,351);
