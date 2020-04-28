@@ -15,9 +15,9 @@ void init() {
 
 void drawl1(int x) {
 	if (x==1)
-		glColor3f(0.5f,0.5f,0.5f);
+		glColor3f(1.0,0.0,0.0);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(1.0,0.0,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(0,0);
 	glVertex2d(750,0);
@@ -32,7 +32,7 @@ void drawl2(int x) {
 	if (x==1)
 		glColor3f(0.5,0.5,0.5);
 	else
-		glColor3f(0.0,0.5,0.0);;
+		glColor3f(0.0,1.0,0.0);;
 	glBegin(GL_POLYGON);
 	glVertex2d(750,0);
 	glVertex2d(1500,0);
@@ -46,7 +46,7 @@ void drawl3(int x) {
 	if (x==1)
 		glColor3f(0.5,0.5,0.5);
 	else
-		glColor3f(0.0,0.5,0.0);
+		glColor3f(0.0,0.5,1.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(1500,0);
 	glVertex2d(2250,0);
@@ -130,7 +130,7 @@ void line(void)
 {
 //glClear(GL_COLOR_BUFFER_BIT);
 glLineWidth(1.0f);
-glColor3f(1.0,0.0,0.0);
+glColor3f(0.0,0.0,0.0);
 glBegin(GL_LINES);
 glVertex2d(0,350);
 glVertex2d(3000,350);
@@ -154,6 +154,7 @@ void display() {
 	drawu2(1);
 	drawu3(1);
 	drawu4(1);
+	line();
 	glFlush();
 }
 
