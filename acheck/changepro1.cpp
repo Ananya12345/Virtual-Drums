@@ -13,8 +13,11 @@ void init() {
     gluOrtho2D(0.0,3000.0,0.0,700.0);//l,r,t,b
  }
 
-void drawl1() {
-	glColor3f(0.0,0.0,1.0);
+void drawl1(int x) {
+	if (x==1)
+		glColor3f(0.0,0.0,1.0);
+	else
+		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(0,0);
 	glVertex2d(750,0);
@@ -25,8 +28,11 @@ void drawl1() {
 }
 	
 
-void drawl2() {
-	glColor3f(0.0,1.0,0.0);
+void drawl2(int x) {
+	if (x==1)
+		glColor3f(0.0,1.0,0.0);
+	else
+		glColor3f(0.0,0.5,0.0);;
 	glBegin(GL_POLYGON);
 	glVertex2d(750,0);
 	glVertex2d(1500,0);
@@ -36,8 +42,11 @@ void drawl2() {
 	glFlush();
 }
 
-void drawl3() {
-	glColor3f(0.0,1.0,1.0);
+void drawl3(int x) {
+	if (x==1)
+		glColor3f(0.0,1.0,1.0);
+	else
+		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(1500,0);
 	glVertex2d(2250,0);
@@ -47,9 +56,11 @@ void drawl3() {
 	glFlush();
 }
 
-void drawl4() {
-	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,0.0);
+void drawl4(int x) {
+	if (x==1)
+		glColor3f(1.0,0.0,0.0);
+	else
+		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(2250,0);
 	glVertex2d(3000,0);
@@ -59,9 +70,11 @@ void drawl4() {
 	glFlush();
 }
 
-void drawu1() {
-	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,1.0);
+void drawu1(int x) {
+	if (x==1)
+		glColor3f(1.0,0.0,1.0);
+	else
+		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(0,350);
 	glVertex2d(750,350);
@@ -71,9 +84,11 @@ void drawu1() {
 	glFlush();
 }
 
-void drawu2() {
-	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,1.0,0.0);
+void drawu2(int x) {
+	if (x==1)
+		glColor3f(1.0,1.0,0.0);
+	else
+		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(750,350);
 	glVertex2d(1500,350);
@@ -83,9 +98,11 @@ void drawu2() {
 	glFlush();
 }
 
-void drawu3() {
-	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0,0.0,0.5);
+void drawu3(int x) {
+	if (x==1)
+		glColor3f(0.0,0.0,0.5);
+	else
+		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(1500,350);
 	glVertex2d(2250,350);
@@ -95,9 +112,11 @@ void drawu3() {
 	glFlush();
 }
 
-void drawu4() {
-//	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0,0.5,0.0);
+void drawu4(int x) {
+	if (x==1)
+		glColor3f(0.0,0.5,1.0);
+	else
+		glColor3f(0.0,0.5,0.0);
 	glBegin(GL_POLYGON);
 	glVertex2d(2250,350);
 	glVertex2d(3000,350);
@@ -108,19 +127,26 @@ void drawu4() {
 }
 
 void display() {
-	drawl1();
-	drawl2();
-	drawl3();
-	drawl4();
-	drawu1();
-	drawu2();
-	drawu3();
-	drawu4();
+	drawl1(1);
+	drawl2(1);
+	drawl3(1);
+	drawl4(1);
+	drawu1(1);
+	drawu2(1);
+	drawu3(1);
+	drawu4(1);
 	glFlush();
 }
 
+void delay(){
+	int m,n;
+	for(m=0;m<9000;m++)
+		for(n=0;n<9000;n++);
+
+}
 
 void mouse1(int button, int state, int x, int y)
+
     {   char var; 
 	std::cout<<x<<"\n";
 	std::cout<<y;
@@ -134,53 +160,44 @@ void mouse1(int button, int state, int x, int y)
 	    {
 		if (x>0 && x<750 && y<350 && y>0)
 		    {
-		    engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false); 	
-			//std::cin>>var;	
-			glColor3f(0.0,0.0,0.0);
-			glBegin(GL_POLYGON);
-			glVertex2d(0,0);
-			glVertex2d(750,0);
-			glVertex2d(750,350);
-			glVertex2d(0,350);
-			glEnd();
-			glFlush();
-
-	
+			drawl1(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
+			delay();
 		    }
 		else if (x>750 && x<1500 && y<350 && y>0)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
-			//std::cin>>var;	
+			{ drawl2(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
+			delay();
 			}
 		else if (x>1500 && x<2250 && y<350 && y>0)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
-			//std::cin>>var;	
+			{drawl3(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
+			delay();	
 			}
 		 else if (x>2250 && x<3000 && y<350 && y>0)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
-			//std::cin>>var;	
+			{drawl4(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			delay();	
 			}
 		else if (x>0 && x<750 && y<700 && y>350)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
-			//std::cin>>var;	
+			{ drawu1(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			delay();	
 			}
 		 else if (x>750 && x<1500 && y<700 && y>350)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
-			//std::cin>>var;	
+			{drawu2(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			delay();	
 			}
 		 else if (x>1500 && x<2250 && y<700 && y>350)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
-			//std::cin>>var;	
+			{drawu3(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			delay();	
 			}
 		 else if (x>2250 && x<3000 && y<700 && y>350)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
-			//std::cin>>var;	
+			{drawu4(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			delay();	
 			}
 		else
 		    {
@@ -193,14 +210,14 @@ void mouse1(int button, int state, int x, int y)
 	if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
 	{
 		if (x>750 && x<1500 && y<700 && y>350)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
-			//std::cin>>var;	
+			{drawu2(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			delay();	
 			}
 		 else if (x>0 && x<750 && y<700 && y>350)
-			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
-			//std::cin>>var;	
+			{drawu1(0);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			delay();	
 			}
 		else
 		    {
@@ -208,11 +225,7 @@ void mouse1(int button, int state, int x, int y)
 		    }
 		//glutPostRedisplay();
 	}display();
-   // }while (var!='q');
-
-  //  engine->drop();
- // delete engine
-		//return;
+   
   }
 
 void keys(unsigned char key,int x,int y)
@@ -228,49 +241,49 @@ void keys(unsigned char key,int x,int y)
   
 	if (key== 'q')
 		{
-		 engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
+		 engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
 		}
 	
 	else if (key== 't')		{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);
 		}	
 	else if (key== 'r')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/righttom.wav", false);
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/righttom.wav", false);
 		}	
 	else if (key== 'p')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'o')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 's')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'h')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'm')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
 			//std::cin>>var;	
 			}
 	else if (key== 'd')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
 			//std::cin>>var;	
 			}
 		else if (key== 'c')
 			{
-			engine->play2D("/media/sf_ubun2/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			engine->play2D("/media/sf_ubun2/new/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
 			//std::cin>>var;	
 			}
 		else
