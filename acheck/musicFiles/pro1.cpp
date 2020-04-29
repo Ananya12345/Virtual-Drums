@@ -8,20 +8,38 @@ using namespace std;
 using namespace irrklang;
 int width,height;
 
-
-
-
 void init() {
     glClearColor(0.0,0.0,0.0,0.0);
-   
+   glEnable(GL_LINE_STIPPLE);
     //glMatrixMode(GL_PROJECTION);
     //gluOrtho2D(0.0,500.0,0.0,300.0);
    
  }
 
-void drawl1() {
+void line()
+{
+glLineWidth(1.0f);
+glColor3f(0.0,0.0,0.0);
+glBegin(GL_LINES);
+glVertex2d(0,height/2);
+glVertex2d(width,height/2);
+glVertex2d(width/4,0);
+glVertex2d(width/4,height);
+glVertex2d(2*width/4,0);
+glVertex2d(2*width/4,height);
+glVertex2d(3*width/4,0);
+glVertex2d(3*width/4,height);
+glEnd();
+glFlush();
+
+}
+
+void drawl1(int x) {
 	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0,0.0,1.0);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(0,0);
 	glVertex2d(width/4,0);
@@ -31,8 +49,11 @@ void drawl1() {
 	glFlush();
 }
 
-void drawl2() {//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0,1.0,0.0);
+void drawl2(int x) {//glClear(GL_COLOR_BUFFER_BIT);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(width/4,0);
 	glVertex2d(2*width/4,0);
@@ -43,8 +64,11 @@ void drawl2() {//glClear(GL_COLOR_BUFFER_BIT);
 std::cout<<height<<"\n";std::cout<<"---------------------\n";
 }
 
-void drawl3() {//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0,1.0,1.0);
+void drawl3(int x) {//glClear(GL_COLOR_BUFFER_BIT);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(2*width/4,0);
 	glVertex2d(3*width/4,0);
@@ -54,9 +78,12 @@ void drawl3() {//glClear(GL_COLOR_BUFFER_BIT);
 	glFlush();
 }
 
-void drawl4() {
+void drawl4(int x) {
 	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,0.0);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(3*width/4,0);
 	glVertex2d(width,0);
@@ -66,9 +93,12 @@ void drawl4() {
 	glFlush();
 }
 
-void drawu1() {
+void drawu1(int x) {
 	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,0.0,1.0);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(0,height/2);
 	glVertex2d(width/4,height/2);
@@ -78,9 +108,12 @@ void drawu1() {
 	glFlush();
 }
 
-void drawu2() {
+void drawu2(int x) {
 	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1.0,1.0,0.0);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(width/4,height/2);
 	glVertex2d(2*width/4,height/2);
@@ -90,9 +123,12 @@ void drawu2() {
 	glFlush();
 }
 
-void drawu3() {
+void drawu3(int x) {
 	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0,0.0,0.5);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(2*width/4,height/2);
 	glVertex2d(3*width/4,height/2);
@@ -102,9 +138,12 @@ void drawu3() {
 	glFlush();
 }
 
-void drawu4() {
+void drawu4(int x) {
 	//glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0,0.5,0.0);
+	if (x==1)
+		glColor3f(0.1,0.1,0.1);
+	else
+		glColor3f(0.3,0.1,0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(3*width/4,height/2);
 	glVertex2d(width,height/2);
@@ -116,15 +155,22 @@ void drawu4() {
 
 
 void display() {std::cout<<"disp\n";
-	drawl1();
-	drawl2();
-	drawl3();
-	drawl4();
-	drawu1();
-	drawu2();
-	drawu3();
-	drawu4();
+	drawl1(1);
+	drawl2(1);
+	drawl3(1);
+	drawl4(1);
+	drawu1(1);
+	drawu2(1);
+	drawu3(1);
+	drawu4(1);
+	line();
 	glFlush();
+}
+
+void delay(){
+	int m,n;
+	for(m=0;m<9000;m++)
+		for(n=0;n<9000;n++);
 }
 
 void mouse(int button, int state, int x, int y)
@@ -140,43 +186,45 @@ void mouse(int button, int state, int x, int y)
 	    {
 		if (x>0 && x<width/4 && y<height/2 && y>0)
 		    {
+			drawu1(0);
 		    engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);	
-			//std::cin>>var;		
+			delay();//std::cin>>var;		
 		    }
 		else if (x>width/4 && x<2*(width/4) && y<height/2 && y>0)
 			{
+				drawu2(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else if (x>2*(width/4) && x<3*(width/4) && y<height/2 && y>0)
-			{
+			{drawu3(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else if (x>3*(width/4) && x<width && y<height/2 && y>0)
-			{
+			{drawu4(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
-			{
+			{drawl1(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else if (x>width/4 && x<2*width/4 && y<height && y>height/2)
-			{
+			{drawl2(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else if (x>2*width/4 && x<3*width/4 && y<height && y>height/2)
-			{
+			{drawl3(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else if (x>3*width/4 && x<width && y<height && y>height/2)
-			{
+			{drawl4(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else
 		    {
@@ -189,14 +237,15 @@ void mouse(int button, int state, int x, int y)
 	if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
 	{
 		if (x>width/4 && x<2*width/2 && y<height && y>height/2)
-			{
+			{drawl2(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
-			//std::cin>>var;	
+			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
-			{
+			{drawl1(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
-			//std::cin>>var;	
+			delay();
+			//std::cin>>var; 	
 			}
 		else
 		    {
@@ -219,7 +268,7 @@ std::cout<<"reshape\n";
 	std::cout<<w<<"\n";
 	std::cout<<h<<"\n";
 	width=w;height=h;
-   //display();
+   display();
 
 }
 
@@ -228,7 +277,7 @@ int main(int argc, char ** argv) {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(10,10);
-    glutInitWindowSize(500,300);
+    glutInitWindowSize(1300,700);
     glutCreateWindow("VIRTUAL-DRUM");
     glutReshapeFunc(myReshape);
     init();
