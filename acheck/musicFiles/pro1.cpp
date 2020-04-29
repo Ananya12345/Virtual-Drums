@@ -187,43 +187,43 @@ void mouse(int button, int state, int x, int y)
 		if (x>0 && x<width/4 && y<height/2 && y>0)
 		    {
 			drawu1(0);
-		    engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);	
+		    engine->play2D("leftcymbol.wav", false);	
 			delay();//std::cin>>var;		
 		    }
 		else if (x>width/4 && x<2*(width/4) && y<height/2 && y>0)
 			{
 				drawu2(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
+			engine->play2D("lefttom.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else if (x>2*(width/4) && x<3*(width/4) && y<height/2 && y>0)
 			{drawu3(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
+			engine->play2D("righttom.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else if (x>3*(width/4) && x<width && y<height/2 && y>0)
 			{drawu4(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			engine->play2D("rightcymbol.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
+			engine->play2D("cymbolo.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else if (x>width/4 && x<2*width/4 && y<height && y>height/2)
 			{drawl2(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
+			engine->play2D("snareo.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else if (x>2*width/4 && x<3*width/4 && y<height && y>height/2)
 			{drawl3(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bottomtom.wav", false);	
+			engine->play2D("bottomtom.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else if (x>3*width/4 && x<width && y<height && y>height/2)
 			{drawl4(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/bassf.wav", false);	
+			engine->play2D("bassf.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else
@@ -238,12 +238,12 @@ void mouse(int button, int state, int x, int y)
 	{
 		if (x>width/4 && x<2*width/2 && y<height && y>height/2)
 			{drawl2(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			engine->play2D("snarec.wav", false);	
 			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
+			engine->play2D("cymbolc.wav", false);	
 			delay();
 			//std::cin>>var; 	
 			}
