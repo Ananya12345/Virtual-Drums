@@ -10,7 +10,7 @@ using namespace irrklang;
 void init() {
     glClearColor(0.0,0.0,0.0,0.0);
     glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(0.0,1000.0,0.0,500.0);//l,r,t,b
+    gluOrtho2D(0.0,3000.0,0.0,700.0);//l,r,t,b
  }
 
 void line(void)
@@ -210,37 +210,37 @@ void mouse1(int button, int state, int x, int y)
   // do{
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
-		if (x>0 && x<260 && y<350 && y>0)
+		if (x>1 && x<599 && y<349 && y>1)
 		    {
-			drawl1(0);
+			drawu1(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/leftcymbol.wav", false);
-			delay();
+			delay();std::cout<<"lcy";
 		    }
-		else if (x>260 && x<520 && y<350 && y>0)
-			{ drawl2(0);
+		else if (x>601 && x<1199 && y<349 && y>1)
+			{drawu2(0);
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
+			delay();std::cout<<"sc";	
+			}
+		else if (x>1201 && x<1799 && y<349 && y>1)
+			{ drawu3(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/lefttom.wav", false);	
-			delay();
+			delay();std::cout<<"lt";
 			}
-		else if (x>520 && x<780 && y<350 && y>0)
-			{drawu3(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
-			delay();	
-			}
-		 else if (x>780 && x<1040 && y<350 && y>0)
+		else if (x>1801 && x<2399 && y<349 && y>1)
 			{drawu4(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
-			delay();	
-			} 
-else if (x>1040 && x<1300 && y<350 && y>0)
-			{drawu5(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
-			delay();	
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/righttom.wav", false);	
+			delay();std::cout<<"rt";	
 			}
-		/*else if (x>1040 && x<1300 && y<350 && y>0)
-			{ drawl1(0);
+		 else if (x>2401 && x<2999 && y<349 && y>1)
+			{drawu5(0);
+			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/rightcymbol.wav", false);	
+			delay();	std::cout<<"rc";
+			}
+		/*else if (x>0 && x<750 && y<700 && y>350)
+			{ drawu1(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolo.wav", false);	
 			delay();	
-			}*/
+			}
 		 else if (x>750 && x<1500 && y<700 && y>350)
 			{drawu2(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snareo.wav", false);	
@@ -266,17 +266,13 @@ else if (x>1040 && x<1300 && y<350 && y>0)
 	    }
 	if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
 	{
-		if (x>750 && x<1500 && y<700 && y>350)
-			{drawu2(0);
-			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/snarec.wav", false);	
-			delay();	
-			}
+		
 		 else if (x>0 && x<750 && y<700 && y>350)
 			{drawu1(0);
 			engine->play2D("/home/ananyadas/Documents/cgproj/Simple OpenGL Image Library/projects/makefile/Virtual-Drums/acheck/musicFiles/cymbolc.wav", false);	
 			delay();	
 			}
-		else
+		*/else
 		    {
 		    std::cout<<"outside";
 		    }
@@ -361,7 +357,7 @@ int main(int argc, char ** argv) {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(10,10);
-    glutInitWindowSize(1300,700);
+    glutInitWindowSize(3000,700);
     glutCreateWindow("VIRTUAL-DRUM");
     init();
     glutDisplayFunc(display);
