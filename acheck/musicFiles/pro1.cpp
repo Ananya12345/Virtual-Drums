@@ -258,6 +258,78 @@ void mouse(int button, int state, int x, int y)
 	//	return;
   }
 
+void keys(unsigned char key,int x,int y)
+ {
+   char var; 
+   std::cout<<x<<"\n";
+   std::cout<<y;
+
+   ISoundEngine* engine = createIrrKlangDevice();
+
+  if (!engine)
+  return;
+  
+	if (key== 'q')
+		{drawu1(0);
+		 engine->play2D("leftcymbol.wav", false);delay();
+		}
+	
+	else if (key== 't')		{drawu2(0);
+			engine->play2D("lefttom.wav", false);delay();
+		}	
+	else if (key== 'r')
+			{drawu3(0);
+			engine->play2D("righttom.wav", false);delay();
+		}	
+	else if (key== 'p')
+			{drawu4(0);
+			engine->play2D("rightcymbol.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 'o')
+			{drawl1(0);
+			engine->play2D("cymbolo.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 's')
+			{drawl2(0);
+			engine->play2D("snareo.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 'h')
+			{drawl3(0);
+			engine->play2D("bottomtom.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 'm')
+			{drawl4(0);
+			engine->play2D("bassf.wav", false);delay();	
+			//std::cin>>var;	
+			}
+	else if (key== 'd')
+			{drawl2(0);
+			engine->play2D("snarec.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 'c')
+			{drawl1(0);
+			engine->play2D("cymbolc.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else
+		    {
+		    std::cout<<"outside";
+		    }
+		//glutPostRedisplay();
+	display();
+   // }while (var!='q');
+
+  //  engine->drop();
+ // delete engine
+		//return;
+  
+ } 
+
 void myReshape(int w, int h)
 {
 //glClearColor(0.0,0.0,0.0,0.0);
@@ -277,7 +349,7 @@ int main(int argc, char ** argv) {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(10,10);
-    glutInitWindowSize(1300,700);
+    glutInitWindowSize(500,300);
     glutCreateWindow("VIRTUAL-DRUM");
     glutReshapeFunc(myReshape);
     init();
@@ -285,6 +357,7 @@ int main(int argc, char ** argv) {
 
 //
     glutMouseFunc(mouse);//reshape,glortho2d,if width<height reshape 2 param,width and height we et the values of that and then reshape,,,,current width aand fs width csw/fsw=cl/fsl  
+    glutKeyboardFunc(keys);
     glutMainLoop();
 }
 
