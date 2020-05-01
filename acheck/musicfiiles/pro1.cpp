@@ -175,7 +175,7 @@ void delay(){
 
 void delay1(){
 	int m,n;
-	for(m=0;m<9400;m++)
+	for(m=0;m<9800;m++)
 		for(n=0;n<9000;n++);
 }	
 
@@ -193,43 +193,43 @@ void mouse(int button, int state, int x, int y)
 		if (x>0 && x<width/4 && y<height/2 && y>0)
 		    {
 			drawu1(0);
-		    engine->play2D("leftcymbol.wav", false);delay1();	
+		    engine->play2D("rightcym.wav", false);delay1();	
 			delay();//std::cin>>var;		
 		    }
 		else if (x>width/4 && x<2*(width/4) && y<height/2 && y>0)
 			{
 				drawu2(0);
-			engine->play2D("lefttom.wav", false);delay1();	
+			engine->play2D("F,g_l,r_toptom .wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>2*(width/4) && x<3*(width/4) && y<height/2 && y>0)
 			{drawu3(0);
-			engine->play2D("righttom.wav", false);delay1();	
+			engine->play2D("H_bottomtom.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>3*(width/4) && x<width && y<height/2 && y>0)
 			{drawu4(0);
-			engine->play2D("rightcymbol.wav", false);delay1();	
+			engine->play2D("Y_bell_rightcymbolmid.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			engine->play2D("cymbolo.wav", false);delay1();	
+			engine->play2D("z,m_open_downcym.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>width/4 && x<2*width/4 && y<height && y>height/2)
 			{drawl2(0);
-			engine->play2D("snareo.wav", false);delay1();	
+			engine->play2D("C,v_left,rightsnare.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>2*width/4 && x<3*width/4 && y<height && y>height/2)
 			{drawl3(0);
-			engine->play2D("bottomtom.wav", false);delay1();	
+			engine->play2D("B_kick_bass.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>3*width/4 && x<width && y<height && y>height/2)
 			{drawl4(0);
-			engine->play2D("bassf.wav", false);delay1();	
+			engine->play2D("snarec.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else
@@ -242,14 +242,14 @@ void mouse(int button, int state, int x, int y)
 	    }
 	if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
 	{
-		if (x>width/4 && x<2*width/2 && y<height && y>height/2)
-			{drawl2(0);
-			engine->play2D("snarec.wav", false);delay1();	
+		if (x>3*(width/4) && x<width && y<height/2 && y>0)
+			{drawu4(0);
+			engine->play2D("u_ride_rightcymbol_edge.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			engine->play2D("cymbolc.wav", false);delay1();	
+			engine->play2D("x,n _hithat_close_downcym.wav", false);delay1();	
 			delay();
 			//std::cin>>var; 	
 			}
@@ -275,51 +275,51 @@ void keys(unsigned char key,int x,int y)
   if (!engine)
   return;
   
-	if (key== 'q')
+	if (key== 'r')
 		{drawu1(0);
-		 engine->play2D("leftcymbol.wav", false);delay();
+		 engine->play2D("R_crash_leftcymcol.wav", false);delay();
 		}
 	
-	else if (key== 't')		{drawu2(0);
-			engine->play2D("lefttom.wav", false);delay();
+	else if (key== 'y')		{drawu4(0);
+			engine->play2D("Y_bell_rightcymbolmid.wav", false);delay();
 		}	
-	else if (key== 'r')
-			{drawu3(0);
-			engine->play2D("righttom.wav", false);delay();
-		}	
-	else if (key== 'p')
+	else if (key== 'u')
 			{drawu4(0);
-			engine->play2D("rightcymbol.wav", false);delay();	
-			//std::cin>>var;	
-			}
-		else if (key== 'o')
+			engine->play2D("u_ride_rightcymbol_edge.wav", false);delay();
+		}	
+	else if (key== 'z' || key=='m')
 			{drawl1(0);
-			engine->play2D("cymbolo.wav", false);delay();	
+			engine->play2D("z,m_open_downcym.wav", false);delay();	
 			//std::cin>>var;	
 			}
-		else if (key== 's')
+		else if (key== 'x' || key=='n')
+			{drawl1(0);
+			engine->play2D("x,n _hithat_close_downcym.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 'b')
+			{drawl3(0);
+			engine->play2D("B_kick_bass.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 'c' || key=='v')
 			{drawl2(0);
-			engine->play2D("snareo.wav", false);delay();	
+			engine->play2D("C,v_left,rightsnare.wav", false);delay();	
+			//std::cin>>var;	
+			}
+		else if (key== 'd' || key=='j')
+			{drawl4(0);
+			engine->play2D("D,j_rim_edgesnare,tom.wav", false);delay();	
+			//std::cin>>var;	
+			}
+	else if (key== 'f' || key=='g')
+			{drawu2(0);
+			engine->play2D("F,g_l,r_toptom .wav", false);delay();	
 			//std::cin>>var;	
 			}
 		else if (key== 'h')
-			{drawl3(0);
-			engine->play2D("bottomtom.wav", false);delay();	
-			//std::cin>>var;	
-			}
-		else if (key== 'm')
-			{drawl4(0);
-			engine->play2D("bassf.wav", false);delay();	
-			//std::cin>>var;	
-			}
-	else if (key== 'd')
-			{drawl2(0);
-			engine->play2D("snarec.wav", false);delay();	
-			//std::cin>>var;	
-			}
-		else if (key== 'c')
-			{drawl1(0);
-			engine->play2D("cymbolc.wav", false);delay();	
+			{drawu3(0);
+			engine->play2D("H_bottomtom.wav", false);delay();	
 			//std::cin>>var;	
 			}
 		else
