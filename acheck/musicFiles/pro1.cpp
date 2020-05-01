@@ -181,7 +181,7 @@ void mouse(int button, int state, int x, int y)
 
   	if (!engine)
     		return;
-   //do{
+ //  do{
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
 		if (x>0 && x<width/4 && y<height/2 && y>0)
@@ -253,8 +253,8 @@ void mouse(int button, int state, int x, int y)
 		    }
 		//glutPostRedisplay();
 	}display();
-    //}while (var!='q');
-    //engine->drop(); // delete engine
+  //  }while (var!='q');
+  // engine->drop(); // delete engine
 	//	return;
   }
 
@@ -318,7 +318,7 @@ void keys(unsigned char key,int x,int y)
 			}
 		else
 		    {
-		    std::cout<<"outside";
+		    std::cout<<"outside\n";
 		    }
 		//glutPostRedisplay();
 	display();
