@@ -11,15 +11,13 @@ int width,height;
 void init() {
     glClearColor(0.0,0.0,0.0,0.0);
    glEnable(GL_LINE_STIPPLE);
-    //glMatrixMode(GL_PROJECTION);
-    //gluOrtho2D(0.0,500.0,0.0,300.0);
-   
+    
  }
 
 void line()
 {
 glLineWidth(1.0f);
-glColor3f(0.0,0.0,0.0);
+glColor3f(1.0,1.0,1.0);
 glBegin(GL_LINES);
 glVertex2d(0,height/2);
 glVertex2d(width,height/2);
@@ -175,62 +173,78 @@ void delay(){
 
 void delay1(){
 	int m,n;
-	for(m=0;m<00;m++)
+	for(m=0;m<2000;m++)
 		for(n=0;n<9000;n++);
 }	
 
 void mouse(int button, int state, int x, int y)
     {   char var; 
-	//int y=0;
+	
 
-	ISoundEngine* engine = createIrrKlangDevice();
+	//irrKlang::SoundEngine* engine = createIrrKlangDevice();
 
-  	if (!engine)
-    		return;
- //  do{
+  	//if (!engine)
+    		//return;
+ 
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
 		if (x>0 && x<width/4 && y<height/2 && y>0)
 		    {
 			drawu1(0);
-		    engine->play2D("rightcym.wav", false);delay1();	
-			delay();//std::cin>>var;		
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
+		    	engine->play2D("rightcym.wav", false);delay1();	
+			delay();//std::cin>>var;
+			engine->drop();		
 		    }
 		else if (x>width/4 && x<2*(width/4) && y<height/2 && y>0)
 			{
 				drawu2(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("F,g_l,r_toptom .wav", false);delay1();	
-			delay();//std::cin>>var;	
+			delay();//std::cin>>var;
+			engine->drop();	
 			}
 		else if (x>2*(width/4) && x<3*(width/4) && y<height/2 && y>0)
 			{drawu3(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("H_bottomtom.wav", false);delay1();	
-			delay();//std::cin>>var;	
+			delay();//std::cin>>var;
+			engine->drop();	
 			}
 		else if (x>3*(width/4) && x<width && y<height/2 && y>0)
 			{drawu4(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("Y_bell_rightcymbolmid.wav", false);delay1();	
-			delay();//std::cin>>var;	
+			delay();//std::cin>>var;
+			engine->drop();		
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("z,m_open_downcym.wav", false);delay1();	
-			delay();//std::cin>>var;	
+			delay();//std::cin>>var;
+			engine->drop();		
 			}
 		else if (x>width/4 && x<2*width/4 && y<height && y>height/2)
 			{drawl2(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("C,v_left,rightsnare.wav", false);delay1();	
-			delay();//std::cin>>var;	
+			delay();//std::cin>>var;
+			engine->drop();		
 			}
 		else if (x>2*width/4 && x<3*width/4 && y<height && y>height/2)
 			{drawl3(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("B_kick_bass.wav", false);delay1();	
-			delay();//std::cin>>var;	
+			delay();//std::cin>>var;
+			engine->drop();		
 			}
 		else if (x>3*width/4 && x<width && y<height && y>height/2)
 			{drawl4(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("snarec.wav", false);delay1();	
-			delay();//std::cin>>var;	
+			delay();//std::cin>>var;
+			engine->drop();		
 			}
 		else
 		    {
@@ -244,11 +258,13 @@ void mouse(int button, int state, int x, int y)
 	{
 		if (x>3*(width/4) && x<width && y<height/2 && y>0)
 			{drawu4(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("u_ride_rightcymbol_edge.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
+			irrKlang::SoundEngine* engine = createIrrKlangDevice();
 			engine->play2D("x,n _hithat_close_downcym.wav", false);delay1();	
 			delay();
 			//std::cin>>var; 	
@@ -259,9 +275,8 @@ void mouse(int button, int state, int x, int y)
 		    }
 		//glutPostRedisplay();
 	}display();
-  //  }while (var!='q');
-   engine->drop(); // delete engine
-	//	return;
+  
+   //engine->drop(); // delete engine
   }
 
 void keys(unsigned char key,int x,int y)
@@ -270,7 +285,7 @@ void keys(unsigned char key,int x,int y)
    std::cout<<x<<"\n";
    std::cout<<y;
 
-   ISoundEngine* engine = createIrrKlangDevice();
+   IirrKlang::SoundEngine* engine = createIrrKlangDevice();
 
   if (!engine)
   return;
