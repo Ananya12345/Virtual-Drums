@@ -21,6 +21,23 @@ void drawl1() {
 	glEnd();
 	glFlush();
 }
+
+void drawl2() {
+	glColor3f(0.0,0.0,1.0);
+	glBegin(GL_POLYGON);
+	glVertex2d(125,0);
+	glVertex2d(250,0);
+	glVertex2d(250,250);
+	glVertex2d(125,250);
+	glEnd();
+	glFlush();
+}
+
+void display()
+{
+drawl1();
+drawl2();
+}
 void delay(){
 	int m,n;
 	for(m=0;m<20000;m++)
@@ -30,19 +47,29 @@ void delay(){
 void mouse(int button, int state, int x, int y)
     {   char var; 
 
-	ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
+	
    //do{
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
 		if (x>0 && x<125 && y<500 && y>250)
-		    {
-		    engine->play2D("bassf.wav", false);	            delay();
-			//std::cin>>var;		
+		    {ISoundEngine* engine = createIrrKlangDevice();
 
+  	if (!engine)
+    		return;
+		    engine->play2D("bassf.wav", false);delay();            
+			//std::cin>>var;		
+	engine->drop();
 		    }
+else if (x>125 && x<250 && y<500 && y>250)
+			{
+	ISoundEngine* engine = createIrrKlangDevice();
+
+  	if (!engine)
+    		return;
+				
+			engine->play2D("rightcymbol.wav", false);delay();
+	engine->drop();
+			}
 		else
 		    {
 		    std::cout<<"outside";
@@ -54,7 +81,7 @@ void mouse(int button, int state, int x, int y)
    // }while (var!='q');
    
 
- engine->drop(); // delete engine
+  // delete engine
 		return;
   }
 
@@ -65,7 +92,7 @@ int main(int argc, char ** argv) {
     glutInitWindowSize(300,500);
     glutCreateWindow("VIRTUALlll-DRUM");
     init();
-    glutDisplayFunc(drawl1);
+    glutDisplayFunc(display);
     glutMouseFunc(mouse);
     //glutKeyboardFunc(keys);
     glutMainLoop();
