@@ -169,13 +169,13 @@ void display() {std::cout<<"disp\n";
 
 void delay(){
 	int m,n;
-	for(m=0;m<9000;m++)
+	for(m=0;m<2000;m++)
 		for(n=0;n<9000;n++);
 }
 
 void delay1(){
 	int m,n;
-	for(m=0;m<9800;m++)
+	for(m=0;m<00;m++)
 		for(n=0;n<9000;n++);
 }	
 
@@ -328,11 +328,7 @@ void keys(unsigned char key,int x,int y)
 		    }
 		//glutPostRedisplay();
 	display();
-   // }while (var!='q');
-
-  //  engine->drop();
- // delete engine
-		//return;
+   
   
  } 
 
