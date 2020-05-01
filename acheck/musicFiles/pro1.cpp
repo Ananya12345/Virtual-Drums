@@ -173,6 +173,12 @@ void delay(){
 		for(n=0;n<9000;n++);
 }
 
+void delay1(){
+	int m,n;
+	for(m=0;m<9400;m++)
+		for(n=0;n<9000;n++);
+}	
+
 void mouse(int button, int state, int x, int y)
     {   char var; 
 	//int y=0;
@@ -187,43 +193,43 @@ void mouse(int button, int state, int x, int y)
 		if (x>0 && x<width/4 && y<height/2 && y>0)
 		    {
 			drawu1(0);
-		    engine->play2D("leftcymbol.wav", false);	
+		    engine->play2D("leftcymbol.wav", false);delay1();	
 			delay();//std::cin>>var;		
 		    }
 		else if (x>width/4 && x<2*(width/4) && y<height/2 && y>0)
 			{
 				drawu2(0);
-			engine->play2D("lefttom.wav", false);	
+			engine->play2D("lefttom.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>2*(width/4) && x<3*(width/4) && y<height/2 && y>0)
 			{drawu3(0);
-			engine->play2D("righttom.wav", false);	
+			engine->play2D("righttom.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>3*(width/4) && x<width && y<height/2 && y>0)
 			{drawu4(0);
-			engine->play2D("rightcymbol.wav", false);	
+			engine->play2D("rightcymbol.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			engine->play2D("cymbolo.wav", false);	
+			engine->play2D("cymbolo.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>width/4 && x<2*width/4 && y<height && y>height/2)
 			{drawl2(0);
-			engine->play2D("snareo.wav", false);	
+			engine->play2D("snareo.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>2*width/4 && x<3*width/4 && y<height && y>height/2)
 			{drawl3(0);
-			engine->play2D("bottomtom.wav", false);	
+			engine->play2D("bottomtom.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>3*width/4 && x<width && y<height && y>height/2)
 			{drawl4(0);
-			engine->play2D("bassf.wav", false);	
+			engine->play2D("bassf.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else
@@ -238,12 +244,12 @@ void mouse(int button, int state, int x, int y)
 	{
 		if (x>width/4 && x<2*width/2 && y<height && y>height/2)
 			{drawl2(0);
-			engine->play2D("snarec.wav", false);	
+			engine->play2D("snarec.wav", false);delay1();	
 			delay();//std::cin>>var;	
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			engine->play2D("cymbolc.wav", false);	
+			engine->play2D("cymbolc.wav", false);delay1();	
 			delay();
 			//std::cin>>var; 	
 			}
@@ -254,7 +260,7 @@ void mouse(int button, int state, int x, int y)
 		//glutPostRedisplay();
 	}display();
   //  }while (var!='q');
-  // engine->drop(); // delete engine
+   engine->drop(); // delete engine
 	//	return;
   }
 
@@ -349,7 +355,7 @@ int main(int argc, char ** argv) {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(10,10);
-    glutInitWindowSize(500,300);
+    glutInitWindowSize(1000,680);
     glutCreateWindow("VIRTUAL-DRUM");
     glutReshapeFunc(myReshape);
     init();

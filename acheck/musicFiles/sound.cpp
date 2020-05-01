@@ -23,7 +23,7 @@ void drawl1() {
 }
 void delay(){
 	int m,n;
-	for(m=0;m<90000;m++)
+	for(m=0;m<20000;m++)
 		for(n=0;n<9000;n++);
 }	
 
@@ -39,7 +39,7 @@ void mouse(int button, int state, int x, int y)
 	    {
 		if (x>0 && x<125 && y<500 && y>250)
 		    {
-		    engine->play2D("bassf.wav", false);	delay();
+		    engine->play2D("bassf.wav", false);	            delay();
 			//std::cin>>var;		
 
 		    }
