@@ -198,7 +198,7 @@ void mouse(int button, int state, int x, int y)
 		if (x>0 && x<width/4 && y<height/2 && y>0)
 		    {
 			drawu1(0);
-			engine->play2D("rightcym.wav",false); //delay1()	
+			engine->play2D("rightcym.wav", false); //delay1()	
 			delay(); 
 		
 		    }
@@ -278,14 +278,29 @@ void mouse(int button, int state, int x, int y)
   			if (!engine1)
     				return;
 		
-		    	irrklang::ISound* snd=engine1->play2D("rightcym.wav", true); //delay1()
-			snd->setPlaybackSpeed(2.0); 	
+		    	//irrklang::ISound* snd=
+			engine1->play2D("rightcym.wav", true); //delay1()
+			//snd->setPlaybackSpeed(2.0); 	
 			
 				
 			//while true 
 				delay(); 
 		
 		    }
+
+		if (x>width/4 && x<2*(width/4) && y<height/2 && y>0)
+			{
+				drawu2(0);
+			ISoundEngine* engine2 = createIrrKlangDevice();
+
+  			if (!engine2)
+    				return;
+		
+			
+			engine2->play2D("F,g_l,r_toptom .wav", true);	 //delay1()
+			delay(); 
+				
+			}
 		if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
 			
