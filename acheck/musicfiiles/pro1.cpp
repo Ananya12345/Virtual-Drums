@@ -165,117 +165,89 @@ void display() {std::cout<<"disp\n";
 	glFlush();
 }
 
-void delay(){
+void delay(){				//for light change
 	int m,n;
 	for(m=0;m<2000;m++)
 		for(n=0;n<9000;n++);
 }
 
-void delay1(){
-	int m,n;
-	for(m=0;m<9000;m++)
-		for(n=0;n<9000;n++);
-}	
-
-void delay2(){
+void delay1(){				//for music
 	int m,n;
 	for(m=0;m<20000;m++)
 		for(n=0;n<9000;n++);
 }	
 
 
+
+
 void mouse(int button, int state, int x, int y)
     {   char var; 
 	
 
-	//irrKlang::SoundEngine* engine = createIrrKlangDevice();
+	ISoundEngine* engine = createIrrKlangDevice();
 
-  	//if (!engine)
-    		//return;
+  	if (!engine)
+    		return;
  
 	if (button==GLUT_LEFT && state==GLUT_DOWN)
 	    {
 		if (x>0 && x<width/4 && y<height/2 && y>0)
 		    {
 			drawu1(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
-		    	engine->play2D("rightcym.wav", false);delay2();	
+			
+		    	engine->play2D("rightcym.wav", false);delay1();
 			delay();//std::cin>>var;
-	engine->drop();		
+		
 		    }
 		else if (x>width/4 && x<2*(width/4) && y<height/2 && y>0)
 			{
 				drawu2(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
-			engine->play2D("F,g_l,r_toptom .wav", false);delay1();	
+			
+			engine->play2D("F,g_l,r_toptom .wav", false);	delay1();
 			delay();//std::cin>>var;
-			engine->drop();	
+				
 			}
 		else if (x>2*(width/4) && x<3*(width/4) && y<height/2 && y>0)
 			{drawu3(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
+			
 			engine->play2D("H_bottomtom.wav", false);delay1();	
 			delay();//std::cin>>var;
-			engine->drop();	
+			
 			}
 		else if (x>3*(width/4) && x<width && y<height/2 && y>0)
 			{drawu4(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
+			
+    		
 			engine->play2D("Y_bell_rightcymbolmid.wav", false);delay1();	
 			delay();//std::cin>>var;
-			engine->drop();		
+				
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
-			engine->play2D("z,m_open_downcym.wav", false);delay1();	
+			
+			engine->play2D("z,m_open_downcym.wav", false);delay1();delay1();	
 			delay();//std::cin>>var;
-			engine->drop();		
+				
 			}
 		else if (x>width/4 && x<2*width/4 && y<height && y>height/2)
 			{drawl2(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
+			
 			engine->play2D("C,v_left,rightsnare.wav", false);delay1();	
 			delay();//std::cin>>var;
-			engine->drop();		
+				
 			}
 		else if (x>2*width/4 && x<3*width/4 && y<height && y>height/2)
 			{drawl3(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
+			
 			engine->play2D("B_kick_bass.wav", false);delay1();	
 			delay();//std::cin>>var;
-			engine->drop();		
+				
 			}
 		else if (x>3*width/4 && x<width && y<height && y>height/2)
 			{drawl4(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
-			engine->play2D("snarec.wav", false);delay1();	
+			engine->play2D("snarec.wav", false);delay1();
 			delay();//std::cin>>var;
-			engine->drop();		
+				
 			}
 		else
 		    {
@@ -289,23 +261,18 @@ void mouse(int button, int state, int x, int y)
 	{
 		if (x>3*(width/4) && x<width && y<height/2 && y>0)
 			{drawu4(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
-			engine->play2D("u_ride_rightcymbol_edge.wav", false);delay1();	
+			
+			engine->play2D("u_ride_rightcymbol_edge.wav", false);	delay1();
 			delay();//std::cin>>var;
-			engine->drop();	
+			
 			}
 		else if (x>0 && x<width/4 && y<height && y>height/2)
 			{drawl1(0);
-			ISoundEngine* engine = createIrrKlangDevice();
-if (!engine)
-    		return;
-			engine->play2D("x,n _hithat_close_downcym.wav", false);delay1();	
+			
+			engine->play2D("x,n _hithat_close_downcym.wav", false);	delay1();
 			delay();
 			//std::cin>>var; 
-			engine->drop();	
+			
 			}
 		else
 		    {
@@ -314,7 +281,7 @@ if (!engine)
 		//glutPostRedisplay();
 	}display();
   
-   //engine->drop(); // delete engine
+   engine->drop(); // delete engine
   }
 
 void keys(unsigned char key,int x,int y)
@@ -330,49 +297,49 @@ void keys(unsigned char key,int x,int y)
   
 	if (key== 'r')
 		{drawu1(0);
-		 engine->play2D("R_crash_leftcymcol.wav", false);delay();
+		 engine->play2D("rightcym.wav", false);delay();delay1();
 		}
 	
 	else if (key== 'y')		{drawu4(0);
-			engine->play2D("Y_bell_rightcymbolmid.wav", false);delay();
+			engine->play2D("Y_bell_rightcymbolmid.wav", false);delay();delay1();
 		}	
 	else if (key== 'u')
 			{drawu4(0);
-			engine->play2D("u_ride_rightcymbol_edge.wav", false);delay();
+			engine->play2D("u_ride_rightcymbol_edge.wav", false);delay();delay1();
 		}	
 	else if (key== 'z' || key=='m')
 			{drawl1(0);
-			engine->play2D("z,m_open_downcym.wav", false);delay();	
+			engine->play2D("z,m_open_downcym.wav", false);delay();delay1();	
 			//std::cin>>var;	
 			}
 		else if (key== 'x' || key=='n')
 			{drawl1(0);
-			engine->play2D("x,n _hithat_close_downcym.wav", false);delay();	
+			engine->play2D("x,n _hithat_close_downcym.wav", false);delay();delay1();	
 			//std::cin>>var;	
 			}
 		else if (key== 'b')
 			{drawl3(0);
-			engine->play2D("B_kick_bass.wav", false);delay();	
+			engine->play2D("B_kick_bass.wav", false);delay();delay1();	
 			//std::cin>>var;	
 			}
 		else if (key== 'c' || key=='v')
 			{drawl2(0);
-			engine->play2D("C,v_left,rightsnare.wav", false);delay();	
+			engine->play2D("C,v_left,rightsnare.wav", false);delay();delay1();	
 			//std::cin>>var;	
 			}
 		else if (key== 'd' || key=='j')
 			{drawl4(0);
-			engine->play2D("D,j_rim_edgesnare,tom.wav", false);delay();	
+			engine->play2D("snarec.wav", false);delay();delay1();delay1();	
 			//std::cin>>var;	
 			}
 	else if (key== 'f' || key=='g')
 			{drawu2(0);
-			engine->play2D("F,g_l,r_toptom .wav", false);delay();	
+			engine->play2D("F,g_l,r_toptom .wav", false);delay();delay1();	
 			//std::cin>>var;	
 			}
 		else if (key== 'h')
 			{drawu3(0);
-			engine->play2D("H_bottomtom.wav", false);delay();	
+			engine->play2D("H_bottomtom.wav", false);delay();delay1();	
 			//std::cin>>var;	
 			}
 		else
@@ -382,7 +349,7 @@ void keys(unsigned char key,int x,int y)
 		//glutPostRedisplay();
 	display();
    
-  
+  engine->drop();
  } 
 
 void myReshape(int w, int h)

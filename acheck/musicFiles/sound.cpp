@@ -47,28 +47,25 @@ void delay(){
 void mouse(int button, int state, int x, int y)
     {   char var; 
 
-	
-   //do{
-	if (button==GLUT_LEFT && state==GLUT_DOWN)
-	    {
-		if (x>0 && x<125 && y<500 && y>250)
-		    {ISoundEngine* engine = createIrrKlangDevice();
-
-  	if (!engine)
-    		return;
-		    engine->play2D("bassf.wav", false);delay();            
-			//std::cin>>var;		
-	engine->drop();
-		    }
-else if (x>125 && x<250 && y<500 && y>250)
-			{
 	ISoundEngine* engine = createIrrKlangDevice();
 
   	if (!engine)
     		return;
+   //do{
+	if (button==GLUT_LEFT && state==GLUT_DOWN)
+	    {
+		if (x>0 && x<125 && y<500 && y>250)
+		    {
+		    engine->play2D("bassf.wav", false);delay();            
+			//std::cin>>var;		
+	
+		    }
+else if (x>125 && x<250 && y<500 && y>250)
+			{
+	
 				
 			engine->play2D("rightcymbol.wav", false);delay();
-	engine->drop();
+	
 			}
 		else
 		    {
@@ -81,7 +78,7 @@ else if (x>125 && x<250 && y<500 && y>250)
    // }while (var!='q');
    
 
-  // delete engine
+ engine->drop(); // delete engine
 		return;
   }
 
