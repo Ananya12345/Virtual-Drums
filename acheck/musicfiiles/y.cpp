@@ -99,8 +99,9 @@ void drawl1(int x)
 	glVertex2d(0, height / 2);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Hit-hat Open");
-	drawString(90,40,"");
+	drawString(width/20,height/2.857,"Hit-hat");
+	drawString(width/16,height/3.334,"Open");
+	drawString(width/14.55,height/8.571,"Z/M");
 	glFlush();
 }
 
@@ -119,8 +120,9 @@ void drawl2(int x)
 	glVertex2d(width / 5, height / 2);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Hit-hat Closed");
-	drawString(90,40,"");
+	drawString(width/4,height/2.857,"Hit-hat");
+	drawString(width/3.902,height/3.334,"Closed");
+	drawString(width/3.721,height/8.571,"X/N");
 	glFlush();
 	std::cout << width << "\n";
 	std::cout << height << "\n";
@@ -142,8 +144,8 @@ void drawl3(int x)
 	glVertex2d(2 * width / 5, height / 2);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Snare");
-	drawString(90,40,"");
+	drawString(width/2.162,height/3,"Snare");
+	drawString(width/2.105,height/8.571,"C/V");
 	glFlush();
 }
 
@@ -163,8 +165,8 @@ void drawl4(int x)
 	glVertex2d(3 * width / 5, height / 2);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Bass");
-	drawString(90,40,"");
+	drawString(width/1.509,height/3,"Bass");
+	drawString(width/1.468,height/8.571,"B");
 	glFlush();
 }
 
@@ -184,8 +186,8 @@ void drawl5(int x)
 	glVertex2d(4 * width / 5, height / 2);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Snare Edge");
-	drawString(90,40,"");
+	drawString(width/1.212,height/3,"Snare Edge");
+	drawString(width/1.143,height/8.571,"D/J");
 	glFlush();
 }
 
@@ -205,8 +207,8 @@ void drawu1(int x)
 	glVertex2d(0, height);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Crash");
-	drawString(90,40,"");
+	drawString(width/17.778,height/1.2,"Crash");
+	drawString(width/13.334,height/1.579,"R");
 	glFlush();
 }
 
@@ -226,8 +228,8 @@ void drawu2(int x)
 	glVertex2d(width / 5, height);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Tom");
-	drawString(90,40,"");
+	drawString(width/3.809,height/1.2,"Tom");
+	drawString(width/3.636,height/1.579,"F/G");
 	glFlush();
 }
 
@@ -247,8 +249,8 @@ void drawu3(int x)
 	glVertex2d(2 * width / 5, height);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Floor Tom");
-	drawString(90,40,"");
+	drawString(width/2.319,height/1.2,"Floor Tom");
+	drawString(width/2.078,height/1.579,"H");
 	glFlush();
 }
 
@@ -268,8 +270,8 @@ void drawu4(int x)
 	glVertex2d(3 * width / 5, height);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Ride");
-	drawString(90,40,"");
+	drawString(width/1.495,height/1.2,"Bell");
+	drawString(width/1.455,height/1.579,"Y");
 	glFlush();
 }
 
@@ -289,8 +291,8 @@ void drawu5(int x)
 	glVertex2d(4 * width / 5, height);
 	glEnd();
 	glColor3f(1.0,1.0,1.0);
-	drawString(90,60,"Bell");
-	drawString(90,40,"");
+	drawString(width/1.159,height/1.2,"Ride");
+	drawString(width/1.143,height/1.579,"U");
 	glFlush();
 	std::cout << "u5\n";
 }
@@ -601,63 +603,63 @@ void keys(unsigned char key, int x, int y)
 	if (!engine)
 		return;
 
-	if (key == 'r')
+	if (key == 'r' || key == 'R')
 	{
 		drawu1(0);
 		engine->play2D("rightcym.wav", false);
 		delay(); delay1();
 	}
 
-	else if (key == 'y')
+	else if (key == 'y' || key == 'Y')
 	{
 		drawu4(0);
 		engine->play2D("Y_bell_rightcymbolmid.wav", false);
 		delay(); delay1();//delay1()
 	}
-	else if (key == 'u')
+	else if (key == 'u' || key == 'U')
 	{
 		drawu5(0);
 		engine->play2D("u_ride_rightcymbol_edge.wav", false);
 		delay(); delay1();//delay1()
 	}
-	else if (key == 'z' || key == 'm')
+	else if (key == 'z' || key == 'm' || key == 'Z' || key == 'M')
 	{
 		drawl1(0);
 		engine->play2D("z,m_open_downcym.wav", false);
 		delay(); delay1();//delay1()
 	}
-	else if (key == 'x' || key == 'n')
+	else if (key == 'x' || key == 'n' || key == 'X' || key == 'N')
 	{
 		drawl2(0);
 		engine->play2D("cymbolc.wav", false);
 		delay(); delay1(); //delay1()
 	}
-	else if (key == 'b')
+	else if (key == 'b' || key == 'B')
 	{
 		drawl4(0);
 		engine->play2D("B_kick_bass.wav", false);
 		delay();delay1(); //delay1()
 	}
-	else if (key == 'c' || key == 'v')
+	else if (key == 'c' || key == 'v' || key == 'C' || key == 'V')
 	{
 		drawl3(0);
 		engine->play2D("C,v_left,rightsnare.wav", false);
 		delay(); delay1();//delay1()
 	}
-	else if (key == 'd' || key == 'j')
+	else if (key == 'd' || key == 'j' || key == 'D' || key == 'J')
 	{
 		drawl5(0);
 		engine->play2D("snarec.wav", false);
 		delay();delay1();
 		 //delay1() //delay1()
 	}
-	else if (key == 'f' || key == 'g')
+	else if (key == 'f' || key == 'g' || key == 'F' || key == 'G')
 	{
 		drawu2(0);
 		engine->play2D("F,g_l,r_toptom .wav", false);
 		delay();delay1();
 	}
-	else if (key == 'h')
+	else if (key == 'h' || key == 'H')
 	{
 		drawu3(0);
 		engine->play2D("H_bottomtom.wav", false);
@@ -695,20 +697,20 @@ void fstscreen(void)
 {
 glClear(GL_COLOR_BUFFER_BIT);
 glColor3f(1.0,1.0,1.0);
-drawString(320,530,"Virtual Drum Pad");
-drawString(100,460,"Instructions:");
-drawString(100,430,"1. Mentally prepare yourself to Rock!");
-drawString(100,400,"2. Press any of the tiles to play their corresponding sounds:");
-drawString(130,370,"\tFor the Mouse:");
-drawString(150,340,"\t\tLEFT CLICK-plays one beat");
-drawString(150,310,"\t\tRIGHT CLICK-plays on loop");
-drawString(150,280,"\t\tMIDDLE BUTTON CLICK-pauses the sound playing on loop");
-drawString(130,250,"\tFor the Keyboard:");
-drawString(150,220,"\t\t Press the corresponding key to play the sound");
-drawString(100,190,"3. Click anywhere to start!");
-drawString(600,90,"By:");
-drawString(600,60,"Ananya Das H.N");
-drawString(600,30,"Ananya Shivkumar");
+drawString(width/2.5,height/1.132,"Virtual Drum Pad");
+drawString(width/8,height/1.304,"Instructions:");
+drawString(width/8,height/1.395,"1. Mentally prepare yourself to Rock!");
+drawString(width/8,height/1.5,"2. Press any of the tiles to play their corresponding sounds:");
+drawString(width/6.154,height/1.622,"\tFor the Mouse:");
+drawString(width/5.334,height/1.765,"\t\tLEFT CLICK-plays one beat");
+drawString(width/5.334,height/1.935,"\t\tRIGHT CLICK-plays on loop");
+drawString(width/5.334,height/2.143,"\t\tMIDDLE BUTTON CLICK-pauses the sound playing on loop");
+drawString(width/6.154,height/2.4,"\tFor the Keyboard:");
+drawString(width/5.334,height/2.727,"\t\t Press the corresponding key to play the sound");
+drawString(width/8,height/3.158,"3. Click anywhere to start!");
+drawString(width/1.334,height/6.667,"By:");
+drawString(width/1.334,height/10,"Ananya Das H.N");
+drawString(width/1.334,height/20,"Ananya Shivkumar");
 glEnd();
 glFlush();
 }
