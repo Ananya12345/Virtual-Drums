@@ -37,7 +37,7 @@ ISoundEngine *engine6 = createIrrKlangDevice();
 irrklang::ISound* snd6 =engine6->play2D("z,m_open_downcym.wav",true, true);
 
 ISoundEngine *engine7 = createIrrKlangDevice();
-irrklang::ISound* snd7 =engine7->play2D("x,n _hithat_close_downcym.wav",true, true);
+irrklang::ISound* snd7 =engine7->play2D("cymbolc.wav",true, true);
 
 ISoundEngine *engine8 = createIrrKlangDevice();
 irrklang::ISound* snd8 =engine8->play2D("C,v_left,rightsnare.wav",true, true);
@@ -58,8 +58,8 @@ void init()
 
 void line()
 {
-	glLineWidth(1.0f);
-	glColor3f(1.0, 1.0, 0.0);
+	glLineWidth(3);
+	glColor3f(0.0, 0.0, 0.0);
 	glBegin(GL_LINES);
 	glVertex2d(0, height / 2);
 	glVertex2d(width, height / 2);
@@ -378,7 +378,7 @@ void mouse(int button, int state, int x, int y)
 		if (x > width / 5 && x < 2 * width / 5 && y < height && y > height / 2)
 		{
 			drawl2(0);
-			engine->play2D("x,n _hithat_close_downcym.wav", false);
+			engine->play2D("cymbolc.wav", false);
 			delay1();
 			delay(); //delay1()
 		}
@@ -592,7 +592,7 @@ void keys(unsigned char key, int x, int y)
 	else if (key == 'x' || key == 'n')
 	{
 		drawl2(0);
-		engine->play2D("x,n _hithat_close_downcym.wav", false);
+		engine->play2D("cymbolc.wav", false);
 		delay(); //delay1()
 	}
 	else if (key == 'b')
