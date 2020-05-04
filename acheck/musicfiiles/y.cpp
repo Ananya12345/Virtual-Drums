@@ -48,7 +48,13 @@ irrklang::ISound* snd9 =engine9->play2D("B_kick_bass.wav",true, true);
 ISoundEngine *engine10 = createIrrKlangDevice();
 irrklang::ISound* snd10 =engine10->play2D("snarec.wav",true, true);
 
-
+void drawString(int x,int y,char *string)
+{
+char *c;
+glRasterPos2i(x,y);
+for(c=string;*c!='\0';c++)
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,*c);
+}
 
 void init()
 {
@@ -84,7 +90,7 @@ void drawl1(int x)
 		glColor3f(0.3, 0.1, 0.6);
 
 	if (f6==true)
-		glColor3f(0.7, 0.3, 0.6);		
+		glColor3f(0.07,0.67,0.67);		
 	
 	glBegin(GL_POLYGON);
 	glVertex2d(0, 0);
@@ -92,6 +98,9 @@ void drawl1(int x)
 	glVertex2d(width / 5, height / 2); //125
 	glVertex2d(0, height / 2);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Hit-hat Open");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -102,13 +111,16 @@ void drawl2(int x)
 	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
 	if (f7==true)
-		glColor3f(0.7, 0.3, 0.6);
+		glColor3f(0.07,0.67,0.67);
 	glBegin(GL_POLYGON);
 	glVertex2d(width / 5, 0);
 	glVertex2d(2 * width / 5, 0);
 	glVertex2d(2 * width / 5, height / 2);
 	glVertex2d(width / 5, height / 2);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Hit-hat Closed");
+	drawString(90,40,"");
 	glFlush();
 	std::cout << width << "\n";
 	std::cout << height << "\n";
@@ -122,13 +134,16 @@ void drawl3(int x)
 	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
 	if (f8==true)
-		glColor3f(0.7, 0.3, 0.6);
+		glColor3f(0.07,0.67,0.67);
 	glBegin(GL_POLYGON);
 	glVertex2d(2 * width / 5, 0);
 	glVertex2d(3 * width / 5, 0);
 	glVertex2d(3 * width / 5, height / 2);
 	glVertex2d(2 * width / 5, height / 2);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Snare");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -140,13 +155,16 @@ void drawl4(int x)
 	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
 	if (f9==true)
-		glColor3f(0.7, 0.3, 0.6);
+		glColor3f(0.07,0.67,0.67);
 	glBegin(GL_POLYGON);
 	glVertex2d(3 * width / 5, 0);
 	glVertex2d(4 * width / 5, 0);
 	glVertex2d(4 * width / 5, height / 2);
 	glVertex2d(3 * width / 5, height / 2);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Bass");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -158,13 +176,16 @@ void drawl5(int x)
 	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
 	if (f10==true)
-		glColor3f(0.7, 0.3, 0.6);
+		glColor3f(0.07,0.67,0.67);
 	glBegin(GL_POLYGON);
 	glVertex2d(4 * width / 5, 0);
 	glVertex2d(width, 0);
 	glVertex2d(width, height / 2);
 	glVertex2d(4 * width / 5, height / 2);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Snare Edge");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -183,6 +204,9 @@ void drawu1(int x)
 	glVertex2d(width / 5, height);
 	glVertex2d(0, height);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Crash");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -201,6 +225,9 @@ void drawu2(int x)
 	glVertex2d(2 * width / 5, height);
 	glVertex2d(width / 5, height);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Tom");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -219,6 +246,9 @@ void drawu3(int x)
 	glVertex2d(3 * width / 5, height);
 	glVertex2d(2 * width / 5, height);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Floor Tom");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -237,6 +267,9 @@ void drawu4(int x)
 	glVertex2d(4 * width / 5, height);
 	glVertex2d(3 * width / 5, height);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Ride");
+	drawString(90,40,"");
 	glFlush();
 }
 
@@ -255,6 +288,9 @@ void drawu5(int x)
 	glVertex2d(width, height);
 	glVertex2d(4 * width / 5, height);
 	glEnd();
+	glColor3f(1.0,1.0,1.0);
+	drawString(90,60,"Bell");
+	drawString(90,40,"");
 	glFlush();
 	std::cout << "u5\n";
 }
@@ -551,39 +587,15 @@ void mouse(int button, int state, int x, int y)
 	engine->drop();
 }
 
-void drawString(int x,int y,char *string)
-{
-char *c;
-glRasterPos2i(x,y);
-for(c=string;*c!='\0';c++)
-	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,*c);
-}
 
-void inst(void)
-{
-glClear(GL_COLOR_BUFFER_BIT);
-glColor3f(1.0,1.0,1.0);
-drawString(320,90,"1st Tile:");
-drawString(320,530,"Mouse:");
-drawString(320,360,"Left_Press for one beat");
-drawString(320,320,"Right_Press to loop");
-drawString(320,60,"Keyboard: Press r");
-glEnd();
-glFlush();
-}
+
 
 void keys(unsigned char key, int x, int y)
 {
 	char var;
 	std::cout << x << "\n";
 	std::cout << y;
-	
-	switch(key)
-{
-case 13:inst();break;
-case '1':display();break;
-}
-		
+			
 	ISoundEngine *engine = createIrrKlangDevice();
 
 	if (!engine)
@@ -683,12 +695,20 @@ void fstscreen(void)
 {
 glClear(GL_COLOR_BUFFER_BIT);
 glColor3f(1.0,1.0,1.0);
-drawString(320,530,"Virtual Drumpad");
-drawString(120,360,"Press 1 for Instructions");
-drawString(120,320,"Press 2 to Play");
-drawString(580,90,"By:");
-drawString(580,60,"Ananya Das H.N");
-drawString(580,30,"Ananya Shivkumar");
+drawString(320,530,"Virtual Drum Pad");
+drawString(100,460,"Instructions:");
+drawString(100,430,"1. Mentally prepare yourself to Rock!");
+drawString(100,400,"2. Press any of the tiles to play their corresponding sounds:");
+drawString(130,370,"\tFor the Mouse:");
+drawString(150,340,"\t\tLEFT CLICK-plays one beat");
+drawString(150,310,"\t\tRIGHT CLICK-plays on loop");
+drawString(150,280,"\t\tMIDDLE BUTTON CLICK-pauses the sound playing on loop");
+drawString(130,250,"\tFor the Keyboard:");
+drawString(150,220,"\t\t Press the corresponding key to play the sound");
+drawString(100,190,"3. Click anywhere to start!");
+drawString(600,90,"By:");
+drawString(600,60,"Ananya Das H.N");
+drawString(600,30,"Ananya Shivkumar");
 glEnd();
 glFlush();
 }
@@ -698,6 +718,7 @@ glFlush();
 int main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
+
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(10, 10);
 	glutInitWindowSize(800, 600);
