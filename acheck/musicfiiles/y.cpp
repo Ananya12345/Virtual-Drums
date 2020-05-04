@@ -7,6 +7,17 @@
 using namespace std;
 using namespace irrklang;
 int width, height;
+bool f1=false;
+bool f2=false;
+bool f3=false;
+bool f4=false;
+bool f5=false;
+bool f6=false;
+bool f7=false;
+bool f8=false;
+bool f9=false;
+bool f10=false;
+
 ISoundEngine *engine1 = createIrrKlangDevice();
 irrklang::ISound* snd1 =engine1->play2D("rightcym.wav", true,true);
 
@@ -67,10 +78,14 @@ void line()
 void drawl1(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+
+	if (f6==true)
+		glColor3f(0.7, 0.3, 0.6);		
+	
 	glBegin(GL_POLYGON);
 	glVertex2d(0, 0);
 	glVertex2d(width / 5, 0);
@@ -82,10 +97,12 @@ void drawl1(int x)
 
 void drawl2(int x)
 {
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f7==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(width / 5, 0);
 	glVertex2d(2 * width / 5, 0);
@@ -100,10 +117,12 @@ void drawl2(int x)
 
 void drawl3(int x)
 {
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f8==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(2 * width / 5, 0);
 	glVertex2d(3 * width / 5, 0);
@@ -116,10 +135,12 @@ void drawl3(int x)
 void drawl4(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f9==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(3 * width / 5, 0);
 	glVertex2d(4 * width / 5, 0);
@@ -132,10 +153,12 @@ void drawl4(int x)
 void drawl5(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f10==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(4 * width / 5, 0);
 	glVertex2d(width, 0);
@@ -148,10 +171,12 @@ void drawl5(int x)
 void drawu1(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f1==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(0, height / 2);
 	glVertex2d(width / 5, height / 2);
@@ -164,10 +189,12 @@ void drawu1(int x)
 void drawu2(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f2==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(width / 5, height / 2);
 	glVertex2d(2 * width / 5, height / 2);
@@ -180,10 +207,12 @@ void drawu2(int x)
 void drawu3(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f3==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(2 * width / 5, height / 2);
 	glVertex2d(3 * width / 5, height / 2);
@@ -196,10 +225,12 @@ void drawu3(int x)
 void drawu4(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f4==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(3 * width / 5, height / 2);
 	glVertex2d(4 * width / 5, height / 2);
@@ -212,10 +243,12 @@ void drawu4(int x)
 void drawu5(int x)
 {
 
-	if (x == 1)
+	 if (x == 1)
 		glColor3f(0.1, 0.1, 0.1);
-	else
+	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
+	if (f5==true)
+		glColor3f(0.7, 0.3, 0.6);
 	glBegin(GL_POLYGON);
 	glVertex2d(4 * width / 5, height / 2);
 	glVertex2d(width, height / 2);
@@ -226,9 +259,12 @@ void drawu5(int x)
 	std::cout << "u5\n";
 }
 
+	
+
 void display()
 {
 	std::cout << "disp\n";
+
 	drawl1(1);
 	drawl2(1);
 	drawl3(1);
@@ -377,63 +413,63 @@ void mouse(int button, int state, int x, int y)
 	if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
 	{
 		if (x > 0 && x < width / 5 && y < height / 2 && y > 0)
-		{
+		{	f1=true;
 			drawu1(0);
 			snd1->setIsPaused(false);
-			delay(); //delay1()
+			//delay(); //delay1()
 		}
 
 		if (x > width / 5 && x < 2 * (width / 5) && y < height / 2 && y > 0)
-		{
+		{	f2=true;
 			drawu2(0);
 			snd2->setIsPaused(false);
 			delay(); //delay1()
 		}
 		if (x > 2 * (width / 5) && x < 3 * (width / 5) && y < height / 2 && y > 0)
-		{
+		{	f3=true;
 			drawu3(0);
 			snd3->setIsPaused(false);
 			delay();
 		}
 		if (x > 3 * (width / 5) && x < 4 * width / 5 && y < height / 2 && y > 0)
-		{
+		{	f4=true;
 			drawu4(0);
 			snd4->setIsPaused(false); //delay1()
 			delay();
 		}
 		if (x > 4 * (width / 5) && x < width && y < height / 2 && y > 0)
-		{
+		{	f5=true;
 			drawu5(0);
 			snd5->setIsPaused(false);
 			delay();
 		}
 		if (x > 0 && x < width / 5 && y < height && y > height / 2)
-		{
+		{	f6=true;
 			drawl1(0);
 			snd6->setIsPaused(false);
 			delay();
 		}
 		if (x > width / 5 && x < 2 * width / 5 && y < height && y > height / 2)
-		{
+		{	f7=true;
 			drawl2(0);
 			snd7->setIsPaused(false);
 			delay(); //delay1();
 		}
 
 		if (x > 2 * width / 5 && x < 3 * width / 5 && y < height && y > height / 2)
-		{
+		{	f8=true;
 			drawl3(0);
 			snd8->setIsPaused(false); //delay1();
 			delay();
 		}
 		if (x > 3 * width / 5 && x < 4 * width / 5 && y < height && y > height / 2)
-		{
+		{	f9=true;
 			drawl4(0);
 			snd9->setIsPaused(false); //delay1();
 			delay();
 		}
 		if (x > 4 * width / 5 && x < width && y < height && y > height / 2)
-		{
+		{	f10=true;
 			drawl5(0);
 			snd10->setIsPaused(false); //delay1();
 			delay();
@@ -447,64 +483,64 @@ void mouse(int button, int state, int x, int y)
 	if (button==GLUT_MIDDLE_BUTTON && state==GLUT_DOWN)
 	    {
 		if (x>0 && x<width/5 && y<height/2 && y>0)
-		    {
+		    {	f1=false;
 			drawu1(0);
 			endthis(1);
 			delay();
 		
 		    }
 		if (x > width / 5 && x < 2 * (width / 5) && y < height / 2 && y > 0)
-		{
+		{	f2=false;
 			drawu2(0);
 			endthis(2);
 			delay(); //delay1()
 		}
 
 		if (x > 2 * (width / 5) && x < 3 * (width / 5) && y < height / 2 && y > 0)
-		{
+		{	f3=false;
 			drawu3(0);
 			endthis(3);
 			delay();
 		}
 		if (x > 3 * (width / 5) && x < 4 * width / 5 && y < height / 2 && y > 0)
-		{
+		{	f4=false;
 			drawu4(0);
 			endthis(4);
 			delay();
 		}
 		if (x > 4 * (width / 5) && x < width && y < height / 2 && y > 0)
-		{
+		{	f5=false;
 			drawu5(0);
 			endthis(5);
 			delay();
 		}
 		if (x > 0 && x < width / 5 && y < height && y > height / 2)
-		{
+		{	f6=false;
 			drawl1(0);
 			endthis(6);
 			delay();
 		}
 		if (x > width / 5 && x < 2 * width / 5 && y < height && y > height / 2)
-		{
+		{	f7=false;
 			drawl2(0);
 			endthis(7);
 			delay(); //delay1();
 		}
 
 		if (x > 2 * width / 5 && x < 3 * width / 5 && y < height && y > height / 2)
-		{
+		{	f8=false;
 			drawl3(0);
 			endthis(8);
 			delay();
 		}
 		if (x > 3 * width / 5 && x < 4 * width / 5 && y < height && y > height / 2)
-		{
+		{	f9=false;
 			drawl4(0);
 			endthis(9);
 			delay();
 		}
 		if (x > 4 * width / 5 && x < width && y < height && y > height / 2)
-		{
+		{	f10=false;
 			drawl5(0);
 			endthis(10);
 			delay();
