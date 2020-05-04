@@ -4,24 +4,23 @@
 void init() {
     glClearColor(0.0,0.0,0.0,0.0);
     glMatrixMode(GL_PROJECTION);
-    gluOrtho2D(0.0,3000.0,0.0,700.0);//l,r,t,b
+    gluOrtho2D(0.0,500.0,0.0,300.0);//l,r,t,b
     glEnable(GL_LINE_STIPPLE);
  }
 
-void line(void)
+void drawString(int x,int y,char *string)
+{
+char *c;
+glRasterPos2i(x,y);
+for(c=string;*c!='\0';c++)
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,*c);
+}
+
+void fstscreen(void)
 {
 glClear(GL_COLOR_BUFFER_BIT);
-glLineWidth(1.0f);
-glColor3f(1.0,0.0,0.0);
-glBegin(GL_LINES);
-glVertex2d(0,350);
-glVertex2d(3000,350);
-glVertex2d(750,0);
-glVertex2d(750,700);
-glVertex2d(1500,0);
-glVertex2d(1500,700);
-glVertex2d(2250,0);
-glVertex2d(2250,700);
+glColor3f(1.0,1.0,1.0);
+drawString(200,100,"Virtual Drumpad");
 glEnd();
 glFlush();
 }
@@ -30,11 +29,11 @@ int main(int argc, char ** argv) {
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
     glutInitWindowPosition(10,10);
-    glutInitWindowSize(3000,700);//width,height
+    glutInitWindowSize(300,500);//width,height
     glutCreateWindow("LINE-LOOP");
 //glEnable(GL_LIGHTING);
 //glEnable(GL_LIGHT0);
     init();
-    glutDisplayFunc(line);
+    glutDisplayFunc(fstscreen);
     glutMainLoop();
 }

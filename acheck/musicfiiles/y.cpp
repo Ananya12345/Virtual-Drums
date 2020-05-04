@@ -258,7 +258,6 @@ void drawu5(int x)
 	glFlush();
 	std::cout << "u5\n";
 }
-
 	
 
 void display()
@@ -552,13 +551,39 @@ void mouse(int button, int state, int x, int y)
 	engine->drop();
 }
 
+void drawString(int x,int y,char *string)
+{
+char *c;
+glRasterPos2i(x,y);
+for(c=string;*c!='\0';c++)
+	glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,*c);
+}
+
+void inst(void)
+{
+glClear(GL_COLOR_BUFFER_BIT);
+glColor3f(1.0,1.0,1.0);
+drawString(320,90,"1st Tile:");
+drawString(320,530,"Mouse:");
+drawString(320,360,"Left_Press for one beat");
+drawString(320,320,"Right_Press to loop");
+drawString(320,60,"Keyboard: Press r");
+glEnd();
+glFlush();
+}
 
 void keys(unsigned char key, int x, int y)
 {
 	char var;
 	std::cout << x << "\n";
 	std::cout << y;
-
+	
+	switch(key)
+{
+case 13:inst();break;
+case '1':display();break;
+}
+		
 	ISoundEngine *engine = createIrrKlangDevice();
 
 	if (!engine)
@@ -652,16 +677,35 @@ std::cout<<"reshape\n";
    display();
 }
 
+
+
+void fstscreen(void)
+{
+glClear(GL_COLOR_BUFFER_BIT);
+glColor3f(1.0,1.0,1.0);
+drawString(320,530,"Virtual Drumpad");
+drawString(120,360,"Press 1 for Instructions");
+drawString(120,320,"Press 2 to Play");
+drawString(580,90,"By:");
+drawString(580,60,"Ananya Das H.N");
+drawString(580,30,"Ananya Shivkumar");
+glEnd();
+glFlush();
+}
+
+
+
 int main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(10, 10);
-	glutInitWindowSize(500, 300);
+	glutInitWindowSize(800, 600);
 	glutCreateWindow("VIRTUAL-DRUMS");
+	glutDisplayFunc(fstscreen);
 	glutReshapeFunc(myReshape);
 	init();
-	glutDisplayFunc(display);
+	
 	glutMouseFunc(mouse); //reshape,glortho2d,if width<height reshape 2 param,width and height we et the values of that and then reshape,,,,current width aand fs width csw/fsw=cl/fsl
 	glutKeyboardFunc(keys);
 	glutMainLoop();
