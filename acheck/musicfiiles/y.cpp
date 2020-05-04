@@ -6,186 +6,229 @@
 
 using namespace std;
 using namespace irrklang;
-int width,height;
+int width, height;
+ISoundEngine *engine1 = createIrrKlangDevice();
+irrklang::ISound* snd1 =engine1->play2D("rightcym.wav", true,true);
+
+ISoundEngine *engine2 = createIrrKlangDevice();
+irrklang::ISound* snd2 =engine2->play2D("F,g_l,r_toptom .wav",true, true);
+
+ISoundEngine *engine3 = createIrrKlangDevice();
+irrklang::ISound* snd3 =engine3->play2D("H_bottomtom.wav",true, true);
+
+ISoundEngine *engine4 = createIrrKlangDevice();
+irrklang::ISound* snd4 =engine4->play2D("Y_bell_rightcymbolmid.wav",true, true);
+
+ISoundEngine *engine5 = createIrrKlangDevice();
+irrklang::ISound* snd5 =engine5->play2D("u_ride_rightcymbol_edge.wav",true, true);
+
+ISoundEngine *engine6 = createIrrKlangDevice();
+irrklang::ISound* snd6 =engine6->play2D("z,m_open_downcym.wav",true, true);
+
+ISoundEngine *engine7 = createIrrKlangDevice();
+irrklang::ISound* snd7 =engine7->play2D("x,n _hithat_close_downcym.wav",true, true);
+
+ISoundEngine *engine8 = createIrrKlangDevice();
+irrklang::ISound* snd8 =engine8->play2D("C,v_left,rightsnare.wav",true, true);
+
+ISoundEngine *engine9 = createIrrKlangDevice();
+irrklang::ISound* snd9 =engine9->play2D("B_kick_bass.wav",true, true);
+
+ISoundEngine *engine10 = createIrrKlangDevice();
+irrklang::ISound* snd10 =engine10->play2D("snarec.wav",true, true);
 
 
-void init() {
-    glClearColor(0.0,0.0,0.0,0.0);
-   glEnable(GL_LINE_STIPPLE);
-    
- }
+
+void init()
+{
+	glClearColor(0.0, 0.0, 0.0, 0.0);
+	glEnable(GL_LINE_STIPPLE);
+}
 
 void line()
 {
-glLineWidth(1.0f);
-glColor3f(1.0,1.0,0.0);
-glBegin(GL_LINES);
-glVertex2d(0,height/2);
-glVertex2d(width,height/2);
-glVertex2d(width/5,0);
-glVertex2d(width/5,height);
-glVertex2d(2*width/5,0);
-glVertex2d(2*width/5,height);
-glVertex2d(3*width/5,0);
-glVertex2d(3*width/5,height);
-glVertex2d(4*width/5,0);
-glVertex2d(4*width/5,height);
-glEnd();
-glFlush();
-
-}
-
-void drawl1(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
-	else
-		glColor3f(0.3,0.1,0.6);
-	glBegin(GL_POLYGON);
-	glVertex2d(0,0);
-	glVertex2d(width/5,0);
-	glVertex2d(width/5,height/2);//125
-	glVertex2d(0,height/2);
+	glLineWidth(1.0f);
+	glColor3f(1.0, 1.0, 0.0);
+	glBegin(GL_LINES);
+	glVertex2d(0, height / 2);
+	glVertex2d(width, height / 2);
+	glVertex2d(width / 5, 0);
+	glVertex2d(width / 5, height);
+	glVertex2d(2 * width / 5, 0);
+	glVertex2d(2 * width / 5, height);
+	glVertex2d(3 * width / 5, 0);
+	glVertex2d(3 * width / 5, height);
+	glVertex2d(4 * width / 5, 0);
+	glVertex2d(4 * width / 5, height);
 	glEnd();
 	glFlush();
 }
 
-void drawl2(int x) { 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
-	else
-		glColor3f(0.3,0.1,0.6);
-	glBegin(GL_POLYGON);
-	glVertex2d(width/5,0);
-	glVertex2d(2*width/5,0);
-	glVertex2d(2*width/5,height/2);
-	glVertex2d(width/5,height/2);
-	glEnd();
-	glFlush();std::cout<<width<<"\n";
-std::cout<<height<<"\n";std::cout<<"---------------------\n";
-}
+void drawl1(int x)
+{
 
-void drawl3(int x) { 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(2*width/5,0);
-	glVertex2d(3*width/5,0);
-	glVertex2d(3*width/5,height/2);
-	glVertex2d(2*width/5,height/2);
+	glVertex2d(0, 0);
+	glVertex2d(width / 5, 0);
+	glVertex2d(width / 5, height / 2); //125
+	glVertex2d(0, height / 2);
 	glEnd();
 	glFlush();
 }
 
-void drawl4(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+void drawl2(int x)
+{
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(3*width/5,0);
-	glVertex2d(4*width/5,0);
-	glVertex2d(4*width/5,height/2);
-	glVertex2d(3*width/5,height/2);
+	glVertex2d(width / 5, 0);
+	glVertex2d(2 * width / 5, 0);
+	glVertex2d(2 * width / 5, height / 2);
+	glVertex2d(width / 5, height / 2);
+	glEnd();
+	glFlush();
+	std::cout << width << "\n";
+	std::cout << height << "\n";
+	std::cout << "---------------------\n";
+}
+
+void drawl3(int x)
+{
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
+	else
+		glColor3f(0.3, 0.1, 0.6);
+	glBegin(GL_POLYGON);
+	glVertex2d(2 * width / 5, 0);
+	glVertex2d(3 * width / 5, 0);
+	glVertex2d(3 * width / 5, height / 2);
+	glVertex2d(2 * width / 5, height / 2);
 	glEnd();
 	glFlush();
 }
 
-void drawl5(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+void drawl4(int x)
+{
+
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(4*width/5,0);
-	glVertex2d(width,0);
-	glVertex2d(width,height/2);
-	glVertex2d(4*width/5,height/2);
+	glVertex2d(3 * width / 5, 0);
+	glVertex2d(4 * width / 5, 0);
+	glVertex2d(4 * width / 5, height / 2);
+	glVertex2d(3 * width / 5, height / 2);
 	glEnd();
 	glFlush();
 }
 
-void drawu1(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+void drawl5(int x)
+{
+
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(0,height/2);
-	glVertex2d(width/5,height/2);
-	glVertex2d(width/5,height);
-	glVertex2d(0,height);
+	glVertex2d(4 * width / 5, 0);
+	glVertex2d(width, 0);
+	glVertex2d(width, height / 2);
+	glVertex2d(4 * width / 5, height / 2);
 	glEnd();
 	glFlush();
 }
 
-void drawu2(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+void drawu1(int x)
+{
+
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(width/5,height/2);
-	glVertex2d(2*width/5,height/2);
-	glVertex2d(2*width/5,height);
-	glVertex2d(width/5,height);
+	glVertex2d(0, height / 2);
+	glVertex2d(width / 5, height / 2);
+	glVertex2d(width / 5, height);
+	glVertex2d(0, height);
 	glEnd();
 	glFlush();
 }
 
-void drawu3(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+void drawu2(int x)
+{
+
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(2*width/5,height/2);
-	glVertex2d(3*width/5,height/2);
-	glVertex2d(3*width/5,height);
-	glVertex2d(2*width/5,height);
+	glVertex2d(width / 5, height / 2);
+	glVertex2d(2 * width / 5, height / 2);
+	glVertex2d(2 * width / 5, height);
+	glVertex2d(width / 5, height);
 	glEnd();
 	glFlush();
 }
 
-void drawu4(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+void drawu3(int x)
+{
+
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(3*width/5,height/2);
-	glVertex2d(4*width/5,height/2);
-	glVertex2d(4*width/5,height);
-	glVertex2d(3*width/5,height);
+	glVertex2d(2 * width / 5, height / 2);
+	glVertex2d(3 * width / 5, height / 2);
+	glVertex2d(3 * width / 5, height);
+	glVertex2d(2 * width / 5, height);
 	glEnd();
 	glFlush();
 }
 
-void drawu5(int x) {
-	 
-	if (x==1)
-		glColor3f(0.1,0.1,0.1);
+void drawu4(int x)
+{
+
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
 	else
-		glColor3f(0.3,0.1,0.6);
+		glColor3f(0.3, 0.1, 0.6);
 	glBegin(GL_POLYGON);
-	glVertex2d(4*width/5,height/2);
-	glVertex2d(width,height/2);
-	glVertex2d(width,height);
-	glVertex2d(4*width/5,height);
+	glVertex2d(3 * width / 5, height / 2);
+	glVertex2d(4 * width / 5, height / 2);
+	glVertex2d(4 * width / 5, height);
+	glVertex2d(3 * width / 5, height);
 	glEnd();
-	glFlush();std::cout<<"u5\n";
+	glFlush();
 }
 
+void drawu5(int x)
+{
 
-void display() {std::cout<<"disp\n";
+	if (x == 1)
+		glColor3f(0.1, 0.1, 0.1);
+	else
+		glColor3f(0.3, 0.1, 0.6);
+	glBegin(GL_POLYGON);
+	glVertex2d(4 * width / 5, height / 2);
+	glVertex2d(width, height / 2);
+	glVertex2d(width, height);
+	glVertex2d(4 * width / 5, height);
+	glEnd();
+	glFlush();
+	std::cout << "u5\n";
+}
+
+void display()
+{
+	std::cout << "disp\n";
 	drawl1(1);
 	drawl2(1);
 	drawl3(1);
@@ -200,303 +243,388 @@ void display() {std::cout<<"disp\n";
 	glFlush();
 }
 
-void delay(){				//for light change
-	int m,n;
-	for(m=0;m<2000;m++)
-		for(n=0;n<9000;n++);
+void delay()
+{ //for light change
+	int m, n;
+	for (m = 0; m < 2000; m++)
+		for (n = 0; n < 9000; n++)
+			;
 }
 
-void delay1(){				//for music
-	int m,n;
-	for(m=0;m<20000;m++)
-		for(n=0;n<9000;n++);
-}	
-
-void delu1(){
-int m,n;
-	for(m=0;m<20000;m++)
-		for(n=0;n<9000;n++);
+void delay1()
+{ //for music
+	int m, n;
+	for (m = 0; m < 20000; m++)
+		for (n = 0; n < 9000; n++)
+			;
 }
+
+
+void endthis(int x){
+	switch(x){
+	case 1:
+		snd1->setIsPaused(true);
+	case 2:
+		snd2->setIsPaused(true);
+	case 3:
+		snd3->setIsPaused(true);
+	case 4:
+		snd4->setIsPaused(true);
+	case 5:
+		snd5->setIsPaused(true);
+	case 6:
+		snd6->setIsPaused(true);
+	case 7:
+		snd7->setIsPaused(true);
+	case 8:
+		snd8->setIsPaused(true);
+	case 9:
+		snd9->setIsPaused(true);
+	case 10:
+		snd10->setIsPaused(true);
 	
-
+	default:
+		return;
+	}
+}
 
 void mouse(int button, int state, int x, int y)
-    {   char var; 
-	ISoundEngine* engine = createIrrKlangDevice();
+{
+	ISoundEngine *engine = createIrrKlangDevice();
+	if (!engine)
+		return;	
+	
+	if (button == GLUT_LEFT && state == GLUT_DOWN)
+	{
+		if (x > 0 && x < width / 5 && y < height / 2 && y > 0)
+		{
+			drawu1(0);
+			engine->play2D("rightcym.wav", false); //delay1()
+			delay1();
+			delay();
+		}
 
-  	if (!engine)
-    		return;
+		if (x > width / 5 && x < 2 * (width / 5) && y < height / 2 && y > 0)
+		{
+			drawu2(0);
+			engine->play2D("F,g_l,r_toptom .wav", false); //delay1()
+			delay1();
+			delay();
+		}
+		if (x > 2 * (width / 5) && x < 3 * (width / 5) && y < height / 2 && y > 0)
+		{
+			drawu3(0);
+			engine->play2D("H_bottomtom.wav", false); //delay1()
+			delay1();
+			delay();
+		}
+		if (x > 3 * (width / 5) && x < 4 * width / 5 && y < height / 2 && y > 0)
+		{
+			drawu4(0);
+			engine->play2D("Y_bell_rightcymbolmid.wav", false); //delay1()
+			delay1();
+			delay();
+		}
+		if (x > 4 * (width / 5) && x < width && y < height / 2 && y > 0)
+		{
+			drawu5(0);
+			engine->play2D("u_ride_rightcymbol_edge.wav", false);
+			delay1();
+			delay();
+		}
+		if (x > 0 && x < width / 5 && y < height && y > height / 2)
+		{
+			drawl1(0);
+			engine->play2D("z,m_open_downcym.wav", false); //delay1() //delay1()
+			delay1();
+			delay();
+		}
+		if (x > width / 5 && x < 2 * width / 5 && y < height && y > height / 2)
+		{
+			drawl2(0);
+			engine->play2D("x,n _hithat_close_downcym.wav", false);
+			delay1();
+			delay(); //delay1()
+		}
 
- 
-	if (button==GLUT_LEFT && state==GLUT_DOWN)
+		if (x > 2 * width / 5 && x < 3 * width / 5 && y < height && y > height / 2)
+		{
+			drawl3(0);
+			engine->play2D("C,v_left,rightsnare.wav", false); //delay1()
+			delay1();
+			delay();
+		}
+		if (x > 3 * width / 5 && x < 4 * width / 5 && y < height && y > height / 2)
+		{
+			drawl4(0);
+			engine->play2D("B_kick_bass.wav", false); //delay1()
+			delay1();
+			delay();
+		}
+		if (x > 4 * width / 5 && x < width && y < height && y > height / 2)
+		{
+			drawl5(0);
+			engine->play2D("snarec.wav", false); //delay1()
+			delay1();
+			delay();
+		}
+		else
+		{
+			std::cout << "outside";
+		}
+
+	} //leftdown_mousfunc
+	if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN)
+	{
+		if (x > 0 && x < width / 5 && y < height / 2 && y > 0)
+		{
+			drawu1(0);
+			snd1->setIsPaused(false);
+			delay(); //delay1()
+		}
+
+		if (x > width / 5 && x < 2 * (width / 5) && y < height / 2 && y > 0)
+		{
+			drawu2(0);
+			snd2->setIsPaused(false);
+			delay(); //delay1()
+		}
+		if (x > 2 * (width / 5) && x < 3 * (width / 5) && y < height / 2 && y > 0)
+		{
+			drawu3(0);
+			snd3->setIsPaused(false);
+			delay();
+		}
+		if (x > 3 * (width / 5) && x < 4 * width / 5 && y < height / 2 && y > 0)
+		{
+			drawu4(0);
+			snd4->setIsPaused(false); //delay1()
+			delay();
+		}
+		if (x > 4 * (width / 5) && x < width && y < height / 2 && y > 0)
+		{
+			drawu5(0);
+			snd5->setIsPaused(false);
+			delay();
+		}
+		if (x > 0 && x < width / 5 && y < height && y > height / 2)
+		{
+			drawl1(0);
+			snd6->setIsPaused(false);
+			delay();
+		}
+		if (x > width / 5 && x < 2 * width / 5 && y < height && y > height / 2)
+		{
+			drawl2(0);
+			snd7->setIsPaused(false);
+			delay(); //delay1();
+		}
+
+		if (x > 2 * width / 5 && x < 3 * width / 5 && y < height && y > height / 2)
+		{
+			drawl3(0);
+			snd8->setIsPaused(false); //delay1();
+			delay();
+		}
+		if (x > 3 * width / 5 && x < 4 * width / 5 && y < height && y > height / 2)
+		{
+			drawl4(0);
+			snd9->setIsPaused(false); //delay1();
+			delay();
+		}
+		if (x > 4 * width / 5 && x < width && y < height && y > height / 2)
+		{
+			drawl5(0);
+			snd10->setIsPaused(false); //delay1();
+			delay();
+		}
+		else
+		{
+			std::cout << "outside";
+		}
+	}
+
+	if (button==GLUT_MIDDLE_BUTTON && state==GLUT_DOWN)
 	    {
 		if (x>0 && x<width/5 && y<height/2 && y>0)
 		    {
 			drawu1(0);
-			engine->play2D("rightcym.wav", false); //delay1()	
-			 delay1();delay(); 
+			endthis(1);
+			delay();
 		
 		    }
-
-		
-		 if (x>width/5 && x<2*(width/5) && y<height/2 && y>0)
-			{
-				drawu2(0);			
-			engine->play2D("F,g_l,r_toptom .wav", false);	 //delay1()
-			 delay1();delay(); 
-				
-			}
-		if (x>2*(width/5) && x<3*(width/5) && y<height/2 && y>0)
-			{drawu3(0);			
-			engine->play2D("H_bottomtom.wav", false); //delay1()	
-			 delay1();delay(); 			
-			}
-		 if (x>3*(width/5) && x<4*width/5 && y<height/2 && y>0)
-			{drawu4(0);
- 			engine->play2D("Y_bell_rightcymbolmid.wav", false); //delay1()	
-			 delay1();delay(); 
-				
-			}
-		 if (x>4*(width/5) && x<width && y<height/2 && y>0)
-			{drawu5(0);
-    		engine->play2D("u_ride_rightcymbol_edge.wav", false);	 delay1();
-			delay(); 
-			}
-		if (x>0 && x<width/5 && y<height && y>height/2)
-			{drawl1(0);			
-			engine->play2D("z,m_open_downcym.wav", false); //delay1() //delay1()	
-			 delay1();delay(); 				
-			}
-		if (x>width/5 && x<2*width/5 && y<height && y>height/2)
-			{drawl2(0);			
-			engine->play2D("x,n _hithat_close_downcym.wav", false);delay1();delay();	 //delay1()
-			}		  
-			
-		if (x>2*width/5 && x<3*width/5 && y<height && y>height/2)
-			{drawl3(0);			
-			engine->play2D("C,v_left,rightsnare.wav", false); //delay1()	
-			 delay1();delay(); 				
-			}
-		if (x>3*width/5 && x<4*width/5 && y<height && y>height/2)
-			{drawl4(0);			
-			engine->play2D("B_kick_bass.wav", false); //delay1()	
-			 delay1();delay(); 				
-			}
-		if (x>4*width/5 && x<width && y<height && y>height/2)
-			{drawl5(0);
-			engine->play2D("snarec.wav", false); //delay1()
-			 delay1();delay(); 				
-			}
-		else
-		    {
-		    std::cout<<"outside";
-		    }
-
-	}//leftdown_mousfunc
-	if (button==GLUT_RIGHT_BUTTON && state==GLUT_DOWN)
-	{
-		 if (x>0 && x<width/5 && y<height/2 && y>0)
-		    {
-			drawu1(0);
-			ISoundEngine* engine1 = createIrrKlangDevice();
-
-  			if (!engine1)
-    				return;
-		
-		    	//irrklang::ISound* snd=
-			engine1->play2D("rightcym.wav", true);delay(); //delay1()
-			//snd->setPlaybackSpeed(2.0); 		
-			//while true 
-				 
-		
-		    }
-
-		if (x>width/5 && x<2*(width/5) && y<height/2 && y>0)
-			{
-				drawu2(0);
-			ISoundEngine* engine2 = createIrrKlangDevice();
-
-  			if (!engine2)
-    				return;
-			engine2->play2D("F,g_l,r_toptom .wav", true);delay();	 //delay1()	
-			}
-		if (x>2*(width/5) && x<3*(width/5) && y<height/2 && y>0)
-			{drawu3(0);
-			ISoundEngine* engine3 = createIrrKlangDevice();
-
-  			if (!engine3)
-    				return;			
-			engine3->play2D("H_bottomtom.wav", true); //delay1()	
-			 delay(); 			
-			}
-		 if (x>3*(width/5) && x<4*width/5 && y<height/2 && y>0)
-			{drawu4(0);
-			ISoundEngine* engine4 = createIrrKlangDevice();
-
-  			if (!engine4)
-    				return;
- 			engine4->play2D("Y_bell_rightcymbolmid.wav", true); //delay1()	
-			 delay(); 
-				
-			}
-		 if (x>4*(width/5) && x<width && y<height/2 && y>0)
-			{drawu5(0);
-			ISoundEngine* engine5 = createIrrKlangDevice();
-
-  			if (!engine5)
-    				return;
-    		engine5->play2D("u_ride_rightcymbol_edge.wav", true);	 
-			delay(); 
-			}
-		if (x>0 && x<width/5 && y<height && y>height/2)
-			{drawl1(0);
-			ISoundEngine* engine6 = createIrrKlangDevice();
-
-  			if (!engine6)
-    				return;			
-			engine6->play2D("z,m_open_downcym.wav", true); //delay1() //delay1()	
-			 delay(); 				
-			}
-		if (x>width/5 && x<2*width/5 && y<height && y>height/2)
-			{drawl2(0);
-			ISoundEngine* engine7 = createIrrKlangDevice();
-
-  			if (!engine7)
-    				return;			
-			engine7->play2D("x,n _hithat_close_downcym.wav", true);delay();	 //delay1();
-			}		  
-			
-		if (x>2*width/5 && x<3*width/5 && y<height && y>height/2)
-			{drawl3(0);
-			ISoundEngine* engine8 = createIrrKlangDevice();
-
-  			if (!engine8)
-    				return;			
-			engine8->play2D("C,v_left,rightsnare.wav", true); //delay1();	
-			 delay(); 				
-			}
-		if (x>3*width/5 && x<4*width/5 && y<height && y>height/2)
-			{drawl4(0);
-			ISoundEngine* engine9 = createIrrKlangDevice();
-
-  			if (!engine9)
-    				return;			
-			engine9->play2D("B_kick_bass.wav", true); //delay1();	
-			 delay(); 				
-			}
-		if (x>4*width/5 && x<width && y<height && y>height/2)
-			{drawl5(0);
-			ISoundEngine* engine10 = createIrrKlangDevice();
-
-  			if (!engine10)
-    				return;
-			engine10->play2D("snarec.wav", true); //delay1();
-			 delay(); 				
-			}
-		else
-		    {
-		    std::cout<<"outside";
-		    }
-		
-	}display();
-  
-   engine->drop(); 
-  }
-
-void keys(unsigned char key,int x,int y)
- {
-   char var; 
-   std::cout<<x<<"\n";
-   std::cout<<y;
-
-   ISoundEngine* engine = createIrrKlangDevice();
-
-  if (!engine)
-  return;
-  
-	if (key== 'r')
-		{drawu1(0);
-		 engine->play2D("rightcym.wav", false);delay(); //delay1()
+		if (x > width / 5 && x < 2 * (width / 5) && y < height / 2 && y > 0)
+		{
+			drawu2(0);
+			endthis(2);
+			delay(); //delay1()
 		}
-		
-	else if (key== 'y')		{drawu4(0);
-			engine->play2D("Y_bell_rightcymbolmid.wav", false);delay(); //delay1()
-		}	
-	else if (key== 'u')
-			{drawu5(0);
-			engine->play2D("u_ride_rightcymbol_edge.wav", false);delay(); //delay1()
-		}	
-	else if (key== 'z' || key=='m')
-			{drawl1(0);
-			engine->play2D("z,m_open_downcym.wav", false);delay(); //delay1()	
-			 	
-			}
-		else if (key== 'x' || key=='n')
-			{drawl2(0);
-			engine->play2D("x,n _hithat_close_downcym.wav", false);delay(); //delay1()	
-			 	
-			}
-		else if (key== 'b')
-			{drawl4(0);
-			engine->play2D("B_kick_bass.wav", false);delay(); //delay1()	
-			 	
-			}
-		else if (key== 'c' || key=='v')
-			{drawl3(0);
-			engine->play2D("C,v_left,rightsnare.wav", false);delay(); //delay1()	
-			 	
-			}
-		else if (key== 'd' || key=='j')
-			{drawl5(0);
-			engine->play2D("snarec.wav", false);delay();; //delay1() //delay1()	
-			 	
-			}
-	else if (key== 'f' || key=='g')
-			{drawu2(0);
-			engine->play2D("F,g_l,r_toptom .wav", false);delay(); 	
-			 	
-			}
-		else if (key== 'h')
-			{drawu3(0);
-			engine->play2D("H_bottomtom.wav", false);delay(); 	
-			 	
-			}
-		else
-		    {
-		    std::cout<<"outside\n";
-		    }
-		
+
+		if (x > 2 * (width / 5) && x < 3 * (width / 5) && y < height / 2 && y > 0)
+		{
+			drawu3(0);
+			endthis(3);
+			delay();
+		}
+		if (x > 3 * (width / 5) && x < 4 * width / 5 && y < height / 2 && y > 0)
+		{
+			drawu4(0);
+			endthis(4);
+			delay();
+		}
+		if (x > 4 * (width / 5) && x < width && y < height / 2 && y > 0)
+		{
+			drawu5(0);
+			endthis(5);
+			delay();
+		}
+		if (x > 0 && x < width / 5 && y < height && y > height / 2)
+		{
+			drawl1(0);
+			endthis(6);
+			delay();
+		}
+		if (x > width / 5 && x < 2 * width / 5 && y < height && y > height / 2)
+		{
+			drawl2(0);
+			endthis(7);
+			delay(); //delay1();
+		}
+
+		if (x > 2 * width / 5 && x < 3 * width / 5 && y < height && y > height / 2)
+		{
+			drawl3(0);
+			endthis(8);
+			delay();
+		}
+		if (x > 3 * width / 5 && x < 4 * width / 5 && y < height && y > height / 2)
+		{
+			drawl4(0);
+			endthis(9);
+			delay();
+		}
+		if (x > 4 * width / 5 && x < width && y < height && y > height / 2)
+		{
+			drawl5(0);
+			endthis(10);
+			delay();
+		}
+
+	}
+
 	display();
-   
-  engine->drop();
- } 
+	engine->drop();
+}
+
+
+void keys(unsigned char key, int x, int y)
+{
+	char var;
+	std::cout << x << "\n";
+	std::cout << y;
+
+	ISoundEngine *engine = createIrrKlangDevice();
+
+	if (!engine)
+		return;
+
+	if (key == 'r')
+	{
+		drawu1(0);
+		engine->play2D("rightcym.wav", false);
+		delay(); //delay1()
+	}
+
+	else if (key == 'y')
+	{
+		drawu4(0);
+		engine->play2D("Y_bell_rightcymbolmid.wav", false);
+		delay(); //delay1()
+	}
+	else if (key == 'u')
+	{
+		drawu5(0);
+		engine->play2D("u_ride_rightcymbol_edge.wav", false);
+		delay(); //delay1()
+	}
+	else if (key == 'z' || key == 'm')
+	{
+		drawl1(0);
+		engine->play2D("z,m_open_downcym.wav", false);
+		delay(); //delay1()
+	}
+	else if (key == 'x' || key == 'n')
+	{
+		drawl2(0);
+		engine->play2D("x,n _hithat_close_downcym.wav", false);
+		delay(); //delay1()
+	}
+	else if (key == 'b')
+	{
+		drawl4(0);
+		engine->play2D("B_kick_bass.wav", false);
+		delay(); //delay1()
+	}
+	else if (key == 'c' || key == 'v')
+	{
+		drawl3(0);
+		engine->play2D("C,v_left,rightsnare.wav", false);
+		delay(); //delay1()
+	}
+	else if (key == 'd' || key == 'j')
+	{
+		drawl5(0);
+		engine->play2D("snarec.wav", false);
+		delay();
+		; //delay1() //delay1()
+	}
+	else if (key == 'f' || key == 'g')
+	{
+		drawu2(0);
+		engine->play2D("F,g_l,r_toptom .wav", false);
+		delay();
+	}
+	else if (key == 'h')
+	{
+		drawu3(0);
+		engine->play2D("H_bottomtom.wav", false);
+		delay();
+	}
+	else
+	{
+		std::cout << "outside\n";
+	}
+
+	display();
+
+	engine->drop();
+}
 
 void myReshape(int w, int h)
 {
-//glClearColor(0.0,0.0,0.0,0.0);
-    glMatrixMode(GL_PROJECTION);
- gluOrtho2D(0.0,w,0.0,h);
-std::cout<<"reshape\n";
-    //glViewport(0, 0, w, h);
-	std::cout<<w<<"\n";
-	std::cout<<h<<"\n";
-	width=w;height=h;
-   display();
-
+	//glClearColor(0.0,0.0,0.0,0.0);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, w, 0.0, h);
+	std::cout << "reshape\n";
+	//glViewport(0, 0, w, h);
+	std::cout << w << "\n";
+	std::cout << h << "\n";
+	width = w;
+	height = h;
+	display();
 }
 
-
-int main(int argc, char ** argv) {
-    glutInit(&argc,argv);
-    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    glutInitWindowPosition(10,10);
-    glutInitWindowSize(500,300);
-    glutCreateWindow("VIRTUAL-DRUMmmmm");
-    glutReshapeFunc(myReshape);
-    init();
-    glutDisplayFunc(display);
-   glutMouseFunc(mouse);//reshape,glortho2d,if width<height reshape 2 param,width and height we et the values of that and then reshape,,,,current width aand fs width csw/fsw=cl/fsl  
-    glutKeyboardFunc(keys);
-    glutMainLoop();
+int main(int argc, char **argv)
+{
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitWindowPosition(10, 10);
+	glutInitWindowSize(500, 300);
+	glutCreateWindow("VIRTUAL-DRUMmmmm");
+	glutReshapeFunc(myReshape);
+	init();
+	glutDisplayFunc(display);
+	glutMouseFunc(mouse); //reshape,glortho2d,if width<height reshape 2 param,width and height we et the values of that and then reshape,,,,current width aand fs width csw/fsw=cl/fsl
+	glutKeyboardFunc(keys);
+	glutMainLoop();
 }
-
