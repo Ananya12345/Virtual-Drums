@@ -638,16 +638,18 @@ void keys(unsigned char key, int x, int y)
 
 void myReshape(int w, int h)
 {
-	//glClearColor(0.0,0.0,0.0,0.0);
-	glMatrixMode(GL_PROJECTION);
-	gluOrtho2D(0.0, w, 0.0, h);
-	std::cout << "reshape\n";
-	//glViewport(0, 0, w, h);
-	std::cout << w << "\n";
-	std::cout << h << "\n";
-	width = w;
-	height = h;
-	display();
+
+glViewport(0,0,w,h);
+    glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+ gluOrtho2D(0.0,w,0.0,h);
+glClear(GL_COLOR_BUFFER_BIT);
+std::cout<<"reshape\n";
+    //glViewport(0, 0, w, h);
+	std::cout<<w<<"\n";
+	std::cout<<h<<"\n";
+	width=w;height=h;
+   display();
 }
 
 int main(int argc, char **argv)
