@@ -171,7 +171,7 @@ void drawl5(int x)
 void drawu1(int x)
 {
 
-	 if (x == 1)
+	 if (x == 1) 
 		glColor3f(0.1, 0.1, 0.1);
 	else if (x==0)
 		glColor3f(0.3, 0.1, 0.6);
@@ -568,63 +568,63 @@ void keys(unsigned char key, int x, int y)
 	{
 		drawu1(0);
 		engine->play2D("rightcym.wav", false);
-		delay(); //delay1()
+		delay(); delay1();
 	}
 
 	else if (key == 'y')
 	{
 		drawu4(0);
 		engine->play2D("Y_bell_rightcymbolmid.wav", false);
-		delay(); //delay1()
+		delay(); delay1();//delay1()
 	}
 	else if (key == 'u')
 	{
 		drawu5(0);
 		engine->play2D("u_ride_rightcymbol_edge.wav", false);
-		delay(); //delay1()
+		delay(); delay1();//delay1()
 	}
 	else if (key == 'z' || key == 'm')
 	{
 		drawl1(0);
 		engine->play2D("z,m_open_downcym.wav", false);
-		delay(); //delay1()
+		delay(); delay1();//delay1()
 	}
 	else if (key == 'x' || key == 'n')
 	{
 		drawl2(0);
 		engine->play2D("cymbolc.wav", false);
-		delay(); //delay1()
+		delay(); delay1(); //delay1()
 	}
 	else if (key == 'b')
 	{
 		drawl4(0);
 		engine->play2D("B_kick_bass.wav", false);
-		delay(); //delay1()
+		delay();delay1(); //delay1()
 	}
 	else if (key == 'c' || key == 'v')
 	{
 		drawl3(0);
 		engine->play2D("C,v_left,rightsnare.wav", false);
-		delay(); //delay1()
+		delay(); delay1();//delay1()
 	}
 	else if (key == 'd' || key == 'j')
 	{
 		drawl5(0);
 		engine->play2D("snarec.wav", false);
-		delay();
-		; //delay1() //delay1()
+		delay();delay1();
+		 //delay1() //delay1()
 	}
 	else if (key == 'f' || key == 'g')
 	{
 		drawu2(0);
 		engine->play2D("F,g_l,r_toptom .wav", false);
-		delay();
+		delay();delay1();
 	}
 	else if (key == 'h')
 	{
 		drawu3(0);
 		engine->play2D("H_bottomtom.wav", false);
-		delay();
+		delay();delay1();
 	}
 	else
 	{
@@ -658,7 +658,7 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowPosition(10, 10);
 	glutInitWindowSize(500, 300);
-	glutCreateWindow("VIRTUAL-DRUMmmmm");
+	glutCreateWindow("VIRTUAL-DRUMS");
 	glutReshapeFunc(myReshape);
 	init();
 	glutDisplayFunc(display);
