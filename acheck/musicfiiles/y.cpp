@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <irrKlang.h>
+#pragma GCC diagnostic ignored "-Wwrite-strings"
 
 using namespace std;
 using namespace irrklang;
